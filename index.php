@@ -8,7 +8,7 @@
 <ul>
     <li><a href="Discussions/TD1.php">Discussion</a></li>
     <li><a href="identification/login.php">Login</a></li>
-    <li><a href="identification/sign_up.php">Login</a></li>
+    <li><a href="identification/sign_up.php">Sign_up</a></li>
 </ul>
 
 </body>
