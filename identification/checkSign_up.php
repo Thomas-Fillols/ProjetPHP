@@ -7,11 +7,12 @@
 
 
     $utilisateur = $_POST['identifiant'];
-    $mdp = $_POST['password'];
+    $mdp = $_POST['mdp'];
     $email = $_POST['email'];
-    $role = $_POST['role'];
 
-    echo "test<br/>";
+    #Le rôle 0 correspond au grade membre et le rôle 1 au rôle super-administrateur
+    $role = '1';
+
 
     $query='INSERT INTO utilisateur(pseudo,password,email,role)VALUES(';
     $query.='"'.$utilisateur.'",';
