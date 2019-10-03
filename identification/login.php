@@ -1,15 +1,16 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 <head>
-    <title>Titre</title>
+    <meta charset="UTF-8">
+    <title>PAGGGGEEEEEEE</title>
 </head>
 <body>
 
-<form action=".php" method="post">
-    <input type="text" name="identifiant"/>Identifiant<br/><br/>
 
-    <input type="radio" name="sexe" value="h">Homme<br/>
-    <input type="radio" name="sexe" value="f">Femme<br/><br/>
+<!---------formulaire d'identification--------------->
+
+<form action="verification.php" method="post">
+    <input type="text" name="identifiant"/>Identifiant<br/><br/>
 
     <input type="text" name="E-mail">E-mail<br/><br/>
 
