@@ -8,7 +8,7 @@
     $email = $_POST['email'];
     $subject = 'Réinitialisation de mot de passe';
 
-    $query="SELECT email FROM utilisateur where email = '$email'";
+    $query="SELECT email FROM utilisateur WHERE email = '$email'";
 
     if(!($dbResult=mysqli_query($dbLink, $query))){
         echo'Erreur de requête<br/>';
@@ -24,9 +24,7 @@
 
     if ($dbRow['email'] == $email) {
 
-        //$nouveauMDP = random_bytes(8);
-        $nouveauMDP= 'zawarudo';
-
+        $nouveauMDP = md5(rand(100000,999999));
 
         $query="UPDATE utilisateur SET utilisateur.password ='$nouveauMDP' WHERE email = '$email'";
 
