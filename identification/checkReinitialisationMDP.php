@@ -24,9 +24,9 @@
 
     if ($dbRow['email'] == $email) {
 
-        $nouveauMDP = md5(rand(100000,999999));
+        $nouveauMdp = md5(rand(100000,999999));
 
-        $query="UPDATE utilisateur SET utilisateur.password ='$nouveauMDP' WHERE email = '$email'";
+        $query="UPDATE utilisateur SET utilisateur.password ='$nouveauMdp' WHERE email = '$email'";
 
         if(!($dbResult=mysqli_query($dbLink, $query))){
             echo'Erreur de requête<br/>';
@@ -38,9 +38,9 @@
         }
 
         $date = getdate();
-        $message = 'Voici votre mot de passe : ' . $nouveauMDP . PHP_EOL;
+        $message = 'Veuillez rentrez votre nouveau mot de passe : ' . $nouveauMdp . PHP_EOL;
         mail($email,$subject,$message);
 
     } else {
-        echo 'Erreur, recommencez';
+        echo 'Erreur, mauvais E-mail';
     }
