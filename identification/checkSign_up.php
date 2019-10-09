@@ -10,7 +10,7 @@
     }
 
     if(isset($_POST['mdp'])){
-        $mdp = $_POST['mdp'];
+        $mdp = md5($_POST['mdp']);
     }
 
     if(isset($_POST['email'])){
@@ -19,7 +19,6 @@
 
     #Le rôle 0 correspond au grade membre et le rôle 1 au rôle super-administrateur
     $role = '0';
-
 
     $query='INSERT INTO utilisateur(pseudo,password,email,role)VALUES(';
     $query.='"'.$utilisateur.'",';

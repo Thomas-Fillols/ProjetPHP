@@ -10,7 +10,7 @@
     }
 
     if(isset($_POST['mdp'])){
-        $mdp= $_POST['mdp'];
+        $mdp= md5($_POST['mdp']);
     }
 
     $query="SELECT pseudo,password FROM utilisateur where pseudo = '$utilisateur' and password = '$mdp'";
@@ -31,7 +31,7 @@
         session_start();
 
         $_SESSION['login']='true';
-        $_SESSION['email']=$utilisateur;
+        $_SESSION['pseudo']=$utilisateur;
         $_SESSION['password']=$mdp;
 
         header('Location: ../myprofil.php');
