@@ -16,7 +16,6 @@
     <input type="password" name="mdp">Verification de mot de passe<br/><br/>
 
     <input type="checkbox" name="condition">Condition d'utilisation<br/>
-    <a href="../conditionG/condition.php">Condition général d'utilisation</a>
 
     <input type="submit" name="action" value="s'inscrire">
 </form>
