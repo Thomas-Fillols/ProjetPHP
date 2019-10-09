@@ -30,6 +30,8 @@
         $_SESSION['email']=$utilisateur;
         $_SESSION['password']=$mdp;
 
+        header('Location: ../myprofil.php');
+
     } else {
         echo 'Faux';
     }
