@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
+    <list default="true" id="7500eb4b-deb7-4234-9564-11961e9ba850" name="Default Changelist" comment="Discussion début">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     <list default="true" id="b3c052bd-f9dc-4174-9588-cfb63165b3bd" name="Default Changelist" comment="ajout des pages de login et inscription">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/login.php" afterDir="false" />
@@ -49,6 +52,13 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="MERGE" />
+  </component>
+  <component name="ProjectConfigurationFiles">
+    <option name="files">
+      <list>
+        <option value="$PROJECT_DIR$/.idea/deployment.xml" />
+        <option value="$PROJECT_DIR$/.idea/webServers.xml" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -58,6 +68,7 @@
       </list>
     </option>
   </component>
+  <component name="ProjectId" id="1RgxsfZqzC1EuhAtxPaSqgHzNLH" />
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="137" />
     <option name="y" value="28" />
@@ -92,6 +103,11 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
   </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Users\User\PhpstormProjects\ProjetPHP\Discussions" />
+    </key>
+  </component>
   <component name="RunDashboard">
     <option name="ruleStates">
       <list>
@@ -109,7 +125,7 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="b3c052bd-f9dc-4174-9588-cfb63165b3bd" name="Default Changelist" comment="" />
+      <changelist id="7500eb4b-deb7-4234-9564-11961e9ba850" name="Default Changelist" comment="Discussion début" />
       <created>1569849898001</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -117,6 +133,8 @@
       <workItem from="1569849899187" duration="88000" />
       <workItem from="1569997503706" duration="16000" />
       <workItem from="1570091618969" duration="3147000" />
+      <workItem from="1570102765647" duration="30000" />
+      <workItem from="1570105012870" duration="584000" />
     </task>
     <task id="LOCAL-00001" summary="test">
       <created>1570092703444</created>
@@ -125,6 +143,35 @@
       <option name="project" value="LOCAL" />
       <updated>1570092703444</updated>
     </task>
+    <task id="LOCAL-00002" summary="Dossiers">
+      <created>1570096638354</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1570096638354</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Discussion le début">
+      <created>1570097293265</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1570097293265</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Test accès dossier">
+      <created>1570097740739</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1570097740739</updated>
+    </task>
+    <task id="LOCAL-00005" summary="index.php">
+      <created>1570105062171</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1570105062172</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <task id="LOCAL-00002" summary="ajout des pages de login et inscription">
       <created>1570095910353</created>
       <option name="number" value="00002" />
@@ -173,8 +220,26 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="test" />
+    <MESSAGE value="Dossiers" />
+    <MESSAGE value="Discussion le début" />
+    <MESSAGE value="Test accès dossier" />
+    <MESSAGE value="index.php" />
+    <option name="LAST_COMMIT_MESSAGE" value="index.php" />
     <MESSAGE value="ajout des pages de login et inscription" />
     <MESSAGE value="page de login en cours" />
     <option name="LAST_COMMIT_MESSAGE" value="page de login en cours" />

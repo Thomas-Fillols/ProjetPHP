@@ -2,7 +2,7 @@
 <project version="4">
   <component name="WebServers">
     <option name="servers">
-      <webServer id="51fd1372-136c-4b70-aeff-14c980913925" name="projetph" url="http://freenote.alwaysdata.net">
+      <webServer id="51fd1372-136c-4b70-aeff-14c980913925" name="always" url="http://freenote.alwaysdata.net">
         <fileTransfer host="ssh-freenote.alwaysdata.net" port="22" rootFolder="/home/freenote" accessType="SFTP">
           <advancedOptions>
             <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
