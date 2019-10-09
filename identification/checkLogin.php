@@ -23,7 +23,11 @@
     $dbRow=mysqli_fetch_assoc($dbResult);
 
     if ($dbRow['pseudo'] == $utilisateur && $dbRow['password'] == $mdp) {
-        header('Location:page1.php');
+
+        $_SESSION['login']='true';
+        $_SESSION['email']=$utilisateur;
+        $_SESSION['password']=$mdp;
+
     } else {
-        header('Location:page2.php');
+        echo 'Faux';
     }
