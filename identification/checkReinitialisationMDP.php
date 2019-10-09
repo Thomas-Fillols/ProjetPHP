@@ -25,7 +25,7 @@
     if ($dbRow['email'] == $email) {
 
         //$nouveauMDP = random_bytes(8);
-        $nouveauMDP= 'poiuytreza';
+        $nouveauMDP= 'zawarudo';
 
 
         $query="UPDATE utilisateur SET utilisateur.password ='$nouveauMDP' WHERE email = '$email'";
@@ -43,7 +43,6 @@
         $message = 'Voici votre mot de passe : ' . $nouveauMDP . PHP_EOL;
         mail($email,$subject,$message);
 
-        header('Location:page2.php');
     } else {
-        header('Location:page2.php');
+        echo 'Erreur, recommencez';
     }
