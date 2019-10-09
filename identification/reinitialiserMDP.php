@@ -14,9 +14,7 @@
     <p>Entrez votre mail :</p>
     <input type="text" name="email"/><br/>
     <p>Entrez votre nouveau mot de passe :</p>
-    <input type="text" name="mdp"/><br/>
-    <p>Vérifiez le mot de passe :</p>
-    <input type="text" name="verifmdp"/><br/>
+    <input type="password" name="mdp"/><br/>
 
     <input type="submit" name="action" value="connection">
 </form>
