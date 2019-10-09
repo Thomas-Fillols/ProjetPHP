@@ -12,6 +12,12 @@ or die('Erreur dans la sélection de la base : ' . mysqli_error($dbLink));
 
 if ($Submit == 'Send' && sizeof($NbMots)<=2) {
 
+    if (sizeof($NbMots)>2)
+        throw (new Exception('Vous voulez envoyer trop de mots'));
+
+    if (sizeof($Participation)>60)
+        throw (new Exception('Trop de caractères'));
+
     echo '<!DOCTYPE html> 
               <html lang="fr">
               <head>
@@ -21,14 +27,11 @@ if ($Submit == 'Send' && sizeof($NbMots)<=2) {
               <header> Votre participation a bien été enregistrée. </header>
               <ul>
               </ul></body>' . PHP_EOL;
+    
     $query = 'INSERT INTO Discussion(Participation)VALUES(';
     $query .= '"' . $Participation . '")';
 }
-else if (sizeof($NbMots)>2)
-    throw (new Exception('Vous voulez envoyer trop de mots'));
 
-else if (sizeof($Participation)>60)
-    throw (new Exception('Trop de caractères'));
 
 if (!($dbResult = mysqli_query($dbLink, $query))) {
     echo 'Erreur de requête<br/>';
