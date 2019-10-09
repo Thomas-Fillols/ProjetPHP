@@ -25,13 +25,23 @@
 
         $nouveauMDP = random_bytes(8);
 
-        $query="INSERT INTO utilisateur(email, password) WHERE email = '$email' VALUES(";
-        $query.='"'.$email.'",';
+        $query="UPDATE utilisateur SET 'password' ='$nouveauMDP' WHERE email = '$email'";
         $query.='"'.$nouveauMDP.'")';
+
+        if(!($dbResult=mysqli_query($dbLink, $query))){
+            echo'Erreur de requête<br/>';
+            //Affiche le type d'erreur.
+            echo'Erreur:'.mysqli_error($dbLink).'<br/>';
+            //Affiche la requête envoyée.
+            echo'Requête:'.$query.'<br/>';
+            exit();
+        }
 
         $date = getdate();
         $message = 'Voici votre mot de passe :' . $nouveauMDP . PHP_EOL;
         mail($email,$subject,$message);
+
+        header('Location:page2.php');
     } else {
         header('Location:page2.php');
     }
