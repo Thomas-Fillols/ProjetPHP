@@ -5,10 +5,17 @@
     mysqli_select_db($dbLink,'freenote_sql')
         or die('Erreur dans la sélection de la base:'.mysqli_error($dbLink));
 
+    if(isset($_POST['identifiant'])){
+        $utilisateur = $_POST['identifiant'];
+    }
 
-    $utilisateur = $_POST['identifiant'];
-    $mdp = $_POST['mdp'];
-    $email = $_POST['email'];
+    if(isset($_POST['mdp'])){
+        $mdp = $_POST['mdp'];
+    }
+
+    if(isset($_POST['email'])){
+        $email = $_POST['email'];
+    }
 
     #Le rôle 0 correspond au grade membre et le rôle 1 au rôle super-administrateur
     $role = '0';

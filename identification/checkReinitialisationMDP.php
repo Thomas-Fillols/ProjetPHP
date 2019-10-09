@@ -5,7 +5,10 @@
     mysqli_select_db($dbLink,'freenote_sql')
         or die('Erreur dans la sélection de la base:'.mysqli_error($dbLink));
 
-    $email = $_POST['email'];
+    if(isset($_POST['email'])){
+        $email = $_POST['email'];
+    }
+
     $subject = 'Réinitialisation de mot de passe';
 
     $query="SELECT email FROM utilisateur WHERE email = '$email'";

@@ -5,9 +5,13 @@
     mysqli_select_db($dbLink,'freenote_sql')
         or die('Erreur dans la sélection de la base:'.mysqli_error($dbLink));
 
+    if(isset($_POST['identifiant'])){
+        $utilisateur= $_POST['identifiant'];
+    }
 
-    $utilisateur= $_POST['identifiant'];
-    $mdp= $_POST['mdp'];
+    if(isset($_POST['mdp'])){
+        $mdp= $_POST['mdp'];
+    }
 
     $query="SELECT pseudo,password FROM utilisateur where pseudo = '$utilisateur' and password = '$mdp'";
 
