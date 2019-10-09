@@ -11,7 +11,7 @@
     $email = $_POST['email'];
 
     #Le rôle 0 correspond au grade membre et le rôle 1 au rôle super-administrateur
-    $role = '1';
+    $role = '0';
 
 
     $query='INSERT INTO utilisateur(pseudo,password,email,role)VALUES(';

@@ -12,7 +12,7 @@
 
 <form action="checkReinitialisationMDP.php" method="post">
     <p>Entrez votre mail :</p><br/>
-    <input type="text" name="identifiant"/><br/>
+    <input type="text" name="email"/><br/>
 
     <input type="submit" name="action" value="connection">
 </form>

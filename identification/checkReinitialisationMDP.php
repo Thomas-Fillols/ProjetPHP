@@ -19,7 +19,6 @@
         exit();
     }
 
-    var_dump($query);
 
     $dbRow=mysqli_fetch_assoc($dbResult);
 
@@ -29,7 +28,7 @@
         $nouveauMDP= 'poiuytreza';
 
 
-        $query="UPDATE utilisateur SET password ='$nouveauMDP' WHERE email = '$email'";
+        $query="UPDATE utilisateur SET utilisateur.password ='$nouveauMDP' WHERE email = '$email'";
 
         if(!($dbResult=mysqli_query($dbLink, $query))){
             echo'Erreur de requête<br/>';
@@ -41,7 +40,7 @@
         }
 
         $date = getdate();
-        $message = 'Voici votre mot de passe :' . $nouveauMDP . PHP_EOL;
+        $message = 'Voici votre mot de passe : ' . $nouveauMDP . PHP_EOL;
         mail($email,$subject,$message);
 
         header('Location:page2.php');
