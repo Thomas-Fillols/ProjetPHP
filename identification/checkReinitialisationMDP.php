@@ -19,14 +19,17 @@
         exit();
     }
 
+    var_dump($query);
+
     $dbRow=mysqli_fetch_assoc($dbResult);
 
     if ($dbRow['email'] == $email) {
 
-        $nouveauMDP = random_bytes(8);
+        //$nouveauMDP = random_bytes(8);
+        $nouveauMDP= 'poiuytreza';
 
-        $query="UPDATE utilisateur SET 'password' ='$nouveauMDP' WHERE email = '$email'";
-        $query.='"'.$nouveauMDP.'")';
+
+        $query="UPDATE utilisateur SET password ='$nouveauMDP' WHERE email = '$email'";
 
         if(!($dbResult=mysqli_query($dbLink, $query))){
             echo'Erreur de requête<br/>';
