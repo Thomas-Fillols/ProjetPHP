@@ -27,8 +27,18 @@ if (isset($_SESSION['pseudo']) && isset($_SESSION['password'])) {           // O
 
     if ($dbRow['role'] == 0){
         $role = 'Membre';
-    }else{
+    }else if($dbRow['role'] == 1){
         $role = 'Super-administrateur';
+    }else {
+        $query="UPDATE utilisateur SET role=0 WHERE pseudo = '$pseudo'";
+        if(!($dbResult=mysqli_query($dbLink, $query))){
+            echo'Erreur de requête<br/>';
+            //Affiche le type d'erreur.
+            echo'Erreur:'.mysqli_error($dbLink).'<br/>';
+            //Affiche la requête envoyée.
+            echo'Requête:'.$query.'<br/>';
+            exit();
+        }
     }
 
     echo 'Votre login est '.$_SESSION['pseudo'].'.';
