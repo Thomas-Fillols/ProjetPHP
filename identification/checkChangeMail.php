@@ -25,4 +25,4 @@
         exit();
     }
 
-    header('Location:myprofil.php');
+    header('Location:../myprofil.php');

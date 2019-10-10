@@ -43,12 +43,10 @@ if (isset($_SESSION['pseudo']) && isset($_SESSION['password'])) {           // O
 
     echo 'Votre login est '.$_SESSION['pseudo'].'.';
     echo '<br />';
-
     echo 'Votre E-mail est : '.$dbRow['email'];
     echo '<br />';
-    echo '<a href="identification/changeMail.php">Changer de mot de passe</a><br/>';
+    echo '<a href="identification/changeMail.php">Changer de mail</a>';
     echo '<br />';
-
     echo 'Votre rôle est : '.$role;
     echo '<br />';
 
