@@ -18,7 +18,7 @@
     <input type="submit" name="action" value="connection">
 </form>
 <div>
-    <a href="reinitialiserMDP.php" name="reinitialisationMDP">Mot de passe oublié ?</a>
+    <a href="reinitialiserMDPWithMail.php" name="reinitialisationMDP">Mot de passe oublié ?</a>
 </div>
 </body>
 </html>

@@ -2,7 +2,7 @@
 
 session_start();
 
-if (isset($_SESSION['pseudo']) && isset($_SESSION['password'])) {            // On teste pour voir si nos variables ont bien été enregistrées
+if (isset($_SESSION['pseudo']) && isset($_SESSION['password'])) {           // On teste pour voir si nos variables ont bien été enregistrées
 
     $dbLink=mysqli_connect('mysql-freenote.alwaysdata.net', 'freenote','zawarudo')
         or die('Erreur de connexion au serveur:'.mysqli_connect_error());
@@ -11,9 +11,8 @@ if (isset($_SESSION['pseudo']) && isset($_SESSION['password'])) {            // 
         or die('Erreur dans la sélection de la base:'.mysqli_error($dbLink));
 
     $pseudo = $_SESSION['pseudo'];
-    $password = $_SESSION['password'];
 
-    $query="SELECT pseudo,email,password,role FROM utilisateur WHERE pseudo = '$pseudo' AND password = '$password'";
+    $query="SELECT pseudo,email,role FROM utilisateur WHERE pseudo = '$pseudo'";
 
     if(!($dbResult=mysqli_query($dbLink, $query))){
         echo'Erreur de requête<br/>';
@@ -39,6 +38,8 @@ if (isset($_SESSION['pseudo']) && isset($_SESSION['password'])) {            // 
     echo 'Votre rôle est : '.$role;
     echo '<br />';
 
+
+    echo '<a href="identification/reinitialiserMDP.php">Changer de mot de passe</a><br/>';
 
     // On affiche un lien pour fermer notre session
     echo '<a href="identification/logout.php">Déconnection</a>';
