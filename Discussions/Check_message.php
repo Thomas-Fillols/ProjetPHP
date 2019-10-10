@@ -10,24 +10,13 @@ mysqli_select_db($dbLink, 'freenote_sql')
 or die('Erreur dans la sélection de la base : ' . mysqli_error($dbLink));
 
 
-$query="SELECT Discussion FROM Discussion WHERE Discussion>=Discussion";
-if(!($dbResult=mysqli_query($dbLink, $query))){
-    echo'Erreur de requête<br/>';
-    //Affiche le type d'erreur.
-    echo'Erreur:'.mysqli_error($dbLink).'<br/>';
-    //Affiche la requête envoyée.
-    echo'Requête:'.$query.'<br/>';
-    exit();
-}
 
-$dbRow=mysqli_fetch_assoc($dbResult);
-var_dump($dbRow);
 if ($Submit == 'Send' && sizeof($NbMots)<=2) {
 
     if (sizeof($NbMots)>2)
         throw (new Exception('Vous voulez envoyer trop de mots'));
 
-    if (sizeof($Participation)>60)
+    if (strlen($Participation)>60)
         throw (new Exception('Trop de caractères'));
 
     echo '<!DOCTYPE html> 
@@ -40,12 +29,51 @@ if ($Submit == 'Send' && sizeof($NbMots)<=2) {
               <ul>
               </ul></body>' . PHP_EOL;
 
-    $query = 'INSERT INTO Discussion(Participation)VALUES(';
-    $query .= '"' . $Participation . '")';
+
+    $query ="SELECT D.Participation FROM Discussion D join Discussion Discu ON D.Discussion = Discu.Discussion WHERE D.Ndiscus=Discu.Ndiscus";
+    if(!($dbResult=mysqli_query($dbLink, $query))){
+        echo'Erreur de requête<br/>';
+        //Affiche le type d'erreur.
+        echo'Erreur:'.mysqli_error($dbLink).'<br/>';
+        //Affiche la requête envoyée.
+        echo'Requête:'.$query.'<br/>';
+        exit();
+    }
+    $dbRow=mysqli_fetch_assoc($dbResult);
+    var_dump($dbRow);
+    $ExtractStr = extract($dbRow);
+    var_dump($ExtractStr);
+    $SearchParti = substr(extract($dbRow), 5);
+    var_dump($SearchParti);
+    $query = 'INSERT INTO Discussion(Participation, FullMessage)VALUES(';
+    $query .= '"' . $Participation . '",';
+    $query .= '"' . $SearchParti . $Participation . '")';
+
+    if (!($dbResult = mysqli_query($dbLink, $query))) {
+        echo 'Erreur de requête<br/>';
+        // Affiche le type d'erreur.
+        echo 'Erreur : ' . mysqli_error($dbLink) . '<br/>';
+        // Affiche la requête envoyée.
+        echo 'Requête : ' . $query . '<br/>';
+        exit();
+    }
+
     if ($Submit =! $_POST['BPart'])
         echo '<br/><strong>Bouton non géré !</strong>';
+
 }
 
+
+$query="SELECT Ndiscus FROM Discussion WHERE Ndiscus>=Ndiscus";
+if(!($dbResult=mysqli_query($dbLink, $query))){
+    echo'Erreur de requête<br/>';
+    //Affiche le type d'erreur.
+    echo'Erreur:'.mysqli_error($dbLink).'<br/>';
+    //Affiche la requête envoyée.
+    echo'Requête:'.$query.'<br/>';
+    exit();
+}
+$dbRow=mysqli_fetch_assoc($dbResult);
 
 if ($Close == 'Close Discussion') {
     echo '<!DOCTYPE html> 
@@ -58,18 +86,10 @@ if ($Close == 'Close Discussion') {
               <ul>
               </ul></body>' . PHP_EOL;
     $query = 'INSERT INTO Discussion(NDiscus, Participation)VALUES(';
-    $query .= '"' . $dbRow['Ndiscus'] . '",';
+    $query .= '"' . ($dbRow['Ndiscus']+1) . '",';
     $query .= '"' . 'Fin' . '")';
     if ($Close =! $_POST['Close discussion'])
         echo '<br/><strong>Bouton non géré !</strong>';
 }
 
 
-if (!($dbResult = mysqli_query($dbLink, $query))) {
-    echo 'Erreur de requête<br/>';
-    // Affiche le type d'erreur.
-    echo 'Erreur : ' . mysqli_error($dbLink) . '<br/>';
-    // Affiche la requête envoyée.
-    echo 'Requête : ' . $query . '<br/>';
-    exit();
-}
