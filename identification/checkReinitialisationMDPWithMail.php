@@ -2,11 +2,8 @@
 
     session_start();
 
-    $dbLink=mysqli_connect('mysql-freenote.alwaysdata.net', 'freenote','zawarudo')
-        or die('Erreur de connexion au serveur:'.mysqli_connect_error());
-
-    mysqli_select_db($dbLink,'freenote_sql')
-        or die('Erreur dans la sélection de la base:'.mysqli_error($dbLink));
+    include ("../include/function.inc.php");
+    $dbLink = call_data_base();
 
     if(isset($_POST['email'])){
         $email = $_POST['email'];
@@ -16,17 +13,7 @@
 
     $query="SELECT email FROM utilisateur WHERE email = '$email'";
 
-    if(!($dbResult=mysqli_query($dbLink, $query))){
-        echo'Erreur de requête<br/>';
-        //Affiche le type d'erreur.
-        echo'Erreur:'.mysqli_error($dbLink).'<br/>';
-        //Affiche la requête envoyée.
-        echo'Requête:'.$query.'<br/>';
-        exit();
-    }
-
-
-    $dbRow=mysqli_fetch_assoc($dbResult);
+    $dbRow=mysqli_fetch_assoc(access_bd($dbLink,$query));
 
     if ($dbRow['email'] == $email) {
 
@@ -35,14 +22,7 @@
 
         $query="UPDATE utilisateur SET utilisateur.password ='$nouveauMdpencode' WHERE email = '$email'";
 
-        if(!($dbResult=mysqli_query($dbLink, $query))){
-            echo'Erreur de requête<br/>';
-            //Affiche le type d'erreur.
-            echo'Erreur:'.mysqli_error($dbLink).'<br/>';
-            //Affiche la requête envoyée.
-            echo'Requête:'.$query.'<br/>';
-            exit();
-        }
+        access_bd($dbLink,$query);
 
         $date = getdate();
         $message = 'Veuillez rentrez votre nouveau mot de passe : ' . $nouveauMdp . PHP_EOL;
