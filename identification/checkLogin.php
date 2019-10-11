@@ -1,4 +1,5 @@
 <?php
+
     $dbLink=mysqli_connect('mysql-freenote.alwaysdata.net', 'freenote','zawarudo')
         or die('Erreur de connexion au serveur:'.mysqli_connect_error());
 
