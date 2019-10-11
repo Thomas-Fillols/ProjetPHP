@@ -2,13 +2,13 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>Réinitialisation de MDP</title>
+    <title>Réinitialisation de Mail</title>
 </head>
 <body>
 
 
 <!---------------------------------------------------------------->
-<!---------formulaire de changement de mot de passe--------------->
+<!-------------formulaire de changement de mail------------------->
 
 <form action="checkChangeMail.php" method="post">
     <p>Entrez votre nouveau mail :</p>

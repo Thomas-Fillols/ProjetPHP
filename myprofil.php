@@ -2,6 +2,7 @@
 
 session_start();
 include ("include/function.inc.php");
+include ("include/variable.inc.php");
 
 if (isset($_SESSION['pseudo']) && isset($_SESSION['password'])) {           // On teste pour voir si nos variables ont bien été enregistrées
 
@@ -24,10 +25,13 @@ if (isset($_SESSION['pseudo']) && isset($_SESSION['password'])) {           // O
 
     echo 'Votre login est '.$_SESSION['pseudo'].'.';
     echo '<br />';
+    echo 'Votre login est '.$_SESSION['password'].'.';
+    echo '<br />';
     echo 'Votre E-mail est : '.$dbRow['email'];
     echo '<br />';
     echo '<a href="identification/changeMail.php">Changer de mail</a>';
     echo '<br />';
+
     echo 'Votre rôle est : '.$role;
     echo '<br />';
 
