@@ -8,8 +8,9 @@
     if(isset($_POST['identifiant'])){
         $utilisateur = $_POST['identifiant'];
     }
+
     if(isset($_POST['mdp'])){
-        $mdp = md5($_POST['mdp']);
+        $mdp = $_POST['mdp'];
     }
 
     if(isset($_POST['email'])){
@@ -25,13 +26,17 @@
     }
 
     if($mdp == $mdpverif){
-        $query='INSERT INTO utilisateur(pseudo,password,email,role)VALUES(';
-        $query.='"'.$utilisateur.'",';
-        $query.='"'.$mdp.'",';
-        $query.='"'.$email.'",';
-        $query.='"'.$role.'")';
+        if($checkbox == 'ok'){
+            $query='INSERT INTO utilisateur(pseudo,password,email,role)VALUES(';
+            $query.='"'.$utilisateur.'",';
+            $query.='"'.md5($mdp).'",';
+            $query.='"'.$email.'",';
+            $query.='"'.$role.'")';
 
-        access_bd($dbLink,$query);
+            access_bd($dbLink,$query);
+        }else{
+            echo 'Vous n\'avez pas validé les conditions d\'utilisation.';
+        }
     }else{
-        echo 'La vérification de mot de passe est fausse' ;
+        echo 'La vérification de mot de passe est fausse.' ;
     }
