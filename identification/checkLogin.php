@@ -21,8 +21,6 @@
 
     if ($dbRow['pseudo'] == $utilisateur && $dbRow['password'] == $mdp) {
 
-        session_start();
-
         $_SESSION['login']='true';
         $_SESSION['pseudo']=$utilisateur;
         $_SESSION['password']=$mdp;

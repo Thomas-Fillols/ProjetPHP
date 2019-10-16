@@ -8,7 +8,6 @@
     if(isset($_POST['identifiant'])){
         $utilisateur = $_POST['identifiant'];
     }
-
     if(isset($_POST['mdp'])){
         $mdp = md5($_POST['mdp']);
     }
@@ -17,14 +16,22 @@
         $email = $_POST['email'];
     }
 
-    #Le rôle 0 correspond au grade membre et le rôle 1 au rôle super-administrateur
-    $role = '0';
+    if(isset($_POST['mdpverif'])){
+        $mdpverif = $_POST['mdpverif'];
+    }
 
-    $query='INSERT INTO utilisateur(pseudo,password,email,role)VALUES(';
-    $query.='"'.$utilisateur.'",';
-    $query.='"'.$mdp.'",';
-    $query.='"'.$email.'",';
-    $query.='"'.$role.'")';
+    if(isset($_POST['condition'])){
+        $checkbox = $_POST['condition'];
+    }
 
-    access_bd($dbLink,$query);
+    if($mdp == $mdpverif){
+        $query='INSERT INTO utilisateur(pseudo,password,email,role)VALUES(';
+        $query.='"'.$utilisateur.'",';
+        $query.='"'.$mdp.'",';
+        $query.='"'.$email.'",';
+        $query.='"'.$role.'")';
 
+        access_bd($dbLink,$query);
+    }else{
+        echo 'La vérification de mot de passe est fausse' ;
+    }

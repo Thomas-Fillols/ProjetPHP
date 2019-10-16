@@ -8,8 +8,6 @@ if (isset($_SESSION['pseudo']) && isset($_SESSION['password'])) {           // O
 
     $dbLink = call_data_base();
 
-    $pseudo = $_SESSION['pseudo'];
-
     $query="SELECT pseudo,email,role FROM utilisateur WHERE pseudo = '$pseudo'";
 
     $dbRow=mysqli_fetch_assoc(access_bd($dbLink,$query));
@@ -23,20 +21,18 @@ if (isset($_SESSION['pseudo']) && isset($_SESSION['password'])) {           // O
         access_bd($dbLink,$query);
     }
 
-    echo 'Votre login est '.$_SESSION['pseudo'].'.';
+    echo 'Votre login est '.$pseudo.'.';
     echo '<br />';
-    echo 'Votre login est '.$_SESSION['password'].'.';
+    echo 'Votre login est '.$password.'.';
     echo '<br />';
+    echo '<a href="identification/reinitialiserMDP.php">Changer de mot de passe</a><br/>';
     echo 'Votre E-mail est : '.$dbRow['email'];
     echo '<br />';
     echo '<a href="identification/changeMail.php">Changer de mail</a>';
     echo '<br />';
-
     echo 'Votre rôle est : '.$role;
     echo '<br />';
-
-
-    echo '<a href="identification/reinitialiserMDP.php">Changer de mot de passe</a><br/>';
+    echo '<br />';
 
     // On affiche un lien pour fermer notre session
     echo '<a href="identification/logout.php">Déconnection</a>';
