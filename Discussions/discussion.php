@@ -11,6 +11,6 @@
     <label for="CloseM">Terminer le Message</label>
     <input type="submit" name="CloseMess" id="CloseM" value="Close Message"><br>
     <label for="CloseD"> Fermez la discussion:</label>
-    <input type="submit" name="CloseDisc" id="CloseD" value="Close Discussion"><br>
+    <input type="Submit" name="CloseDisc" id="CloseD" value="Close Discussion"><br>
 </body>
 </html>

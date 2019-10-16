@@ -5,6 +5,13 @@
       <paths name="always">
         <serverdata>
           <mappings>
+            <mapping deploy="/www/" local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
+      <paths name="localhost">
+        <serverdata>
+          <mappings>
             <mapping local="$PROJECT_DIR$" web="/" />
           </mappings>
         </serverdata>
