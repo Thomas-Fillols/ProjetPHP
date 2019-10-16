@@ -1,24 +1,26 @@
 <?php
-
+//Récupération des variables
 $Participation = $_POST['Participation'];
 $Submit = $_POST['BPart'];
 $Close = $_POST['CloseDisc'];
+//Vérification qu'il y a bien deux mots au plus
 $NbMots = explode(" ", $Participation);
+//Connexion à la base de donnée
 $dbLink = mysqli_connect('mysql-freenote.alwaysdata.net', 'freenote', 'zawarudo')
 or die('Erreur de connexion au serveur : ' . mysqli_connect_error());
 mysqli_select_db($dbLink, 'freenote_sql')
 or die('Erreur dans la sélection de la base : ' . mysqli_error($dbLink));
 
 
-
+//Envoies de la participation
 if ($Submit == 'Send' && sizeof($NbMots)<=2) {
-
+    //Erreur s'il y a plus de deux mots
     if (sizeof($NbMots)>2)
         throw (new Exception('Vous voulez envoyer trop de mots'));
-
+    //Erreur s'il y a trop de caractères
     if (strlen($Participation)>60)
         throw (new Exception('Trop de caractères'));
-
+    //Affichage pour montrer que la réponse a bien été envoyée
     echo '<!DOCTYPE html> 
               <html lang="fr">
               <head>
@@ -29,7 +31,7 @@ if ($Submit == 'Send' && sizeof($NbMots)<=2) {
               <ul>
               </ul></body>' . PHP_EOL;
 
-
+    //Ajout de la participation dans Discussion
     $query ="SELECT D.Participation FROM Discussion D join Discussion Discu ON D.Discussion = Discu.Discussion WHERE D.Ndiscus=Discu.Ndiscus";
     if(!($dbResult=mysqli_query($dbLink, $query))){
         echo'Erreur de requête<br/>';
