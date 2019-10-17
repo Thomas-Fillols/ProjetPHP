@@ -32,6 +32,7 @@ if (isset($_SESSION['pseudo']) && isset($_SESSION['password'])) {           // O
     echo '<br />';
     echo 'Votre rôle est : '.$role;
     echo '<br />';
+
     echo '<br />';
 
     // On affiche un lien pour fermer notre session
