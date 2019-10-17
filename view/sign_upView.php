@@ -6,7 +6,7 @@
 </head>
 <body>
 
-<form action="checkSign_up.php" method="post">
+<form action="../model/checkSign_up.php" method="post">
 
     <input type="text" name="identifiant"/>Nom ou Pseudo<br/><br/>
 

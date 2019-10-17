@@ -10,9 +10,9 @@
 <!---------------------------------------------------------------->
 <!---------formulaire de changement de mot de passe--------------->
 
-<form action="checkReinitialisationMDPWithMail.php" method="post">
-    <p>Entrez votre mail :</p>
-    <input type="text" name="email"/><br/>
+<form action="../model/checkReinitialisationMDP.php" method="post">
+    <p>Entrez votre nouveau MDP :</p>
+    <input type="text" name="MDP"/><br/>
 
     <input type="submit" name="action" value="connection">
 </form>

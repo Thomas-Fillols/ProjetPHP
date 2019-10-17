@@ -10,7 +10,7 @@
 <!--------------------------------------------------->
 <!---------formulaire d'identification--------------->
 
-<form action="checkLogin.php" method="post">
+<form action="../model/checkLogin.php" method="post">
     <input type="text" name="identifiant"/>Nom ou Pseudo<br/>
 
     <input type="password" name="mdp">Mot de passe<br/>
@@ -18,7 +18,7 @@
     <input type="submit" name="action" value="connection">
 </form>
 <div>
-    <a href="reinitialiserMDPWithMail.php" name="reinitialisationMDP">Mot de passe oublié ?</a>
+    <a href="reinitialiserMDPWithMailView.php" name="reinitialisationMDP">Mot de passe oublié ?</a>
 </div>
 </body>
 </html>

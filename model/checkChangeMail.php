@@ -1,11 +1,5 @@
 <?php
 
-    session_start();
-    include ("../include/function.inc.php");
-    include ("../include/variable.inc.php");
-
-    $dbLink = call_data_base();
-
     if(isset($_POST['email'])) {
         $email = $_POST['email'];
     }
@@ -16,4 +10,4 @@
 
     access_bd($dbLink,$query);
 
-    header('Location:../myprofil.php');
+    header('Location:../myprofilController.php');

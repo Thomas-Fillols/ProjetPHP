@@ -1,10 +1,5 @@
 <?php
 
-    session_start();
-
-    include ("../include/function.inc.php");
-    include ("../include/variable.inc.php");
-
     $dbLink = call_data_base();
 
     if(isset($_POST['identifiant'])){
@@ -12,7 +7,7 @@
     }
 
     if(isset($_POST['mdp'])){
-        $mdp= md5($_POST['mdp']);
+        $mdp= $_POST['mdp'];
     }
 
     $query="SELECT pseudo,password FROM utilisateur where pseudo = '$utilisateur' and password = '$mdp'";
@@ -23,9 +18,9 @@
 
         $_SESSION['login']='true';
         $_SESSION['pseudo']=$utilisateur;
-        $_SESSION['password']=$mdp;
+        $_SESSION['password']=md5($mdp);
 
-        header('Location: ../myprofil.php');
+        header('Location: ../checkMyprofil.php');
 
     } else {
         echo 'Faux';

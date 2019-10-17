@@ -10,7 +10,7 @@
 <!---------------------------------------------------------------->
 <!-------------formulaire de changement de mail------------------->
 
-<form action="checkChangeMail.php" method="post">
+<form action="../model/checkChangeMail.php" method="post">
     <p>Entrez votre nouveau mail :</p>
     <input type="text" name="email"/><br/>
 
