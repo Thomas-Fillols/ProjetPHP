@@ -1,15 +1,10 @@
 <?php
-$query="SELECT Ndiscus FROM Discussion WHERE Ndiscus>=Ndiscus";
-if(!($dbResult=mysqli_query($dbLink, $query))){
-    echo'Erreur de requête<br/>';
-    //Affiche le type d'erreur.
-    echo'Erreur:'.mysqli_error($dbLink).'<br/>';
-    //Affiche la requête envoyée.
-    echo'Requête:'.$query.'<br/>';
-    exit();
-}
-$dbRow=mysqli_fetch_assoc($dbResult);
-if ($Close == 'Close Discussion') {
+include "../include/function.inc.php";
+
+function CloseDiscussion () {
+    $query="SELECT Ndiscus FROM Discussion WHERE Ndiscus>=Ndiscus";
+    $dbLink=call_data_base();
+    $dbRow=mysqli_fetch_assoc(access_bd($dbLink,$query));
     echo '<!DOCTYPE html> 
               <html lang="fr">
               <head>
@@ -20,8 +15,9 @@ if ($Close == 'Close Discussion') {
               <ul>
               </ul></body>' . PHP_EOL;
     $query = 'INSERT INTO Discussion(NDiscus, Participation)VALUES(';
-    $query .= '"' . ($dbRow['Ndiscus']+1) . '",';
+    $query .= '"' . ($dbRow['Ndiscus'] + 1) . '",';
     $query .= '"' . 'Fin' . '")';
-    if ($Close =! $_POST['Close discussion'])
+    if ($Close = !$_POST['Close discussion'])
         echo '<br/><strong>Bouton non géré !</strong>';
+
 }
