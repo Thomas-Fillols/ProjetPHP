@@ -1,8 +1,8 @@
 <?php
-include '../include/function.inc.php';
-include '../include/variable.inc.php';
+include '../toolclass/function.inc.php';
+include '../toolclass/variable.inc.php';
 
 session_start();
 
-require '../view/loginView.php';
+require ('../view/loginView.php');
 

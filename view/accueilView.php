@@ -7,8 +7,8 @@
 <body>
 <ul>
     <li><a href="../Discussions/discussion.php">Discussion</a></li>
-    <li><a href="loginView.php">Login</a></li>
-    <li><a href="sign_upView.php">Sign_up</a></li>
+    <li><a href="../controller/loginController.php">Login</a></li>
+    <li><a href="../controller/sign_upController.php">Sign_up</a></li>
 </ul>
 </body>
 </html>
