@@ -14,3 +14,5 @@ $FFullMess = 0;
 $NbMots = explode(" ", $Participation);
 $FFullMess = FindFullMess();
 $dbLink=call_data_base();
+$NBDiscus= mysqli_query("Select distinct NDiscu From Discussion");
+$TabNbDiscu=array();

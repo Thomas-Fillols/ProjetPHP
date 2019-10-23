@@ -1,3 +1,6 @@
+<?php
+include "../variable.inc.php";
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,5 +15,13 @@
     <input type="submit" name="CloseMess" id="CloseM" value="Close Message"><br>
     <label for="CloseD"> Fermez la discussion:</label>
     <input type="Submit" name="CloseDisc" id="CloseD" value="Close Discussion"><br>
+    <label for="nbrDiscussion"> Sélectionner la discussion : </label>
+    <select name="nbDiscu" id="nbrDiscussion" size="1">
+        <option> Non sélectionnée </option>
+   <?php foreach($TabNbDiscu as $NDiscus) {?>
+    <option value=\"'<?=$NDiscus['discus']?>
+<?php   }  ?>
+    </option>
+    </select>
 </body>
 </html>
