@@ -1,4 +1,5 @@
 <?php
+    require('../toolclass/function.inc.php');
 
     $dbLink = call_data_base();
 
@@ -10,17 +11,16 @@
         $mdp= $_POST['mdp'];
     }
 
-    $query="SELECT pseudo,password FROM utilisateur where pseudo = '$utilisateur' and password = '$mdp'";
+    $query="SELECT pseudo,password,email FROM utilisateur where pseudo = '$utilisateur' and password = '$mdp'";
 
     $dbRow=mysqli_fetch_assoc(access_bd($dbLink,$query));
-    var_dump($dbRow);
-    var_dump($dbRow['pseudo']);
-    var_dump($dbRow['password']);
+
     if ($dbRow['pseudo'] == $utilisateur && $dbRow['password'] == $mdp) {
 
         $_SESSION['login']='true';
         $_SESSION['pseudo']=$utilisateur;
         $_SESSION['password']=md5($mdp);
+        $_SESSION['email']=$dbRow['email'];
 
         require ('../controller/myprofilController.php');
 

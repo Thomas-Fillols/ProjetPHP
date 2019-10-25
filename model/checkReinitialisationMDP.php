@@ -9,5 +9,3 @@
     $query="UPDATE utilisateur SET utilisateur.password ='$MDP' WHERE pseudo = '$pseudo'";
 
     access_bd($dbLink,$query);
-
-    header('Location:loginView.php');

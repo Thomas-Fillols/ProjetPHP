@@ -6,4 +6,4 @@
 
     $dbLink = call_data_base();
 
-    require '../view/reinitialiserMDPView.php';
+    require ('../view/reinitialiserMDPView.php');
