@@ -8,7 +8,7 @@
     }
 
     if(isset($_POST['mdp'])){
-        $mdp= $_POST['mdp'];
+        $mdp= md5($_POST['mdp']);
     }
 
     $query="SELECT pseudo,password,email FROM utilisateur where pseudo = '$utilisateur' and password = '$mdp'";
@@ -17,13 +17,14 @@
 
     if ($dbRow['pseudo'] == $utilisateur && $dbRow['password'] == $mdp) {
 
+        session_start();
+
         $_SESSION['login']='true';
         $_SESSION['pseudo']=$utilisateur;
         $_SESSION['password']=md5($mdp);
         $_SESSION['email']=$dbRow['email'];
 
-
-        require ('../controller/myprofilController.php');
+        require '../controller/myprofilController.php';
 
     } else {
         echo 'Faux';

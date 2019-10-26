@@ -1,5 +1,4 @@
 <?php
-    session_start();
 
     echo 'Votre login est '.$pseudo.'.';
     echo '<br />';
