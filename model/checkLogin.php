@@ -22,6 +22,7 @@
         $_SESSION['password']=md5($mdp);
         $_SESSION['email']=$dbRow['email'];
 
+
         require ('../controller/myprofilController.php');
 
     } else {

@@ -1,6 +1,10 @@
 <?php
 
-if (isset($_SESSION['pseudo']) && isset($_SESSION['password'])) {       // On teste pour voir si nos variables ont bien été enregistrées
+    session_start();
+
+if (isset($_SESSION['pseudo']) && isset($_SESSION['password'])) {// On teste pour voir si nos variables ont bien été enregistrées
+
+    $dbLink = call_data_base();
 
     $query="SELECT pseudo,email,role FROM utilisateur WHERE pseudo = '$pseudo'";
 

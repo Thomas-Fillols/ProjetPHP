@@ -1,9 +1,8 @@
 <?php
-    session_start();
+    require '../toolclass/function.inc.php';
+    require '../toolclass/variable.inc.php';
 
-    include("../toolclass/function.inc.php");
-    include("../toolclass/variable.inc.php");
+    var_dump($pseudo);
 
-    $dbLink = call_data_base();
 
-    require ('../view/reinitialiserMDPView.php');
+    //require_once '../view/reinitialiserMDPView.php';
