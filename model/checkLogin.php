@@ -1,5 +1,5 @@
 <?php
-    require('../toolclass/function.inc.php');
+    require '../toolclass/function.inc.php';
 
     $dbLink = call_data_base();
 

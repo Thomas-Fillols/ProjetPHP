@@ -1,4 +1,8 @@
 <?php
+    require '../toolclass/function.inc.php';
+    require '../toolclass/variable.inc.php';
+
+    session_start();
 
     $dbLink = call_data_base();
 
@@ -8,6 +12,8 @@
 
     $query="UPDATE utilisateur SET email ='$email' WHERE pseudo = '$pseudo'";
 
+    var_dump($query);
+
     access_bd($dbLink,$query);
 
-    header('Location:../myprofilController.php');
+    //require '../controller/myprofilController.php';
