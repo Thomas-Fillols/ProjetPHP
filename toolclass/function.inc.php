@@ -22,6 +22,6 @@
 
     function verif_connect_user(){
         if (!isset($_SESSION['login'])){
-            header("Location: ../erreur.php");
+            header("Location: ../toolclass/erreur.php");
         }
     }
