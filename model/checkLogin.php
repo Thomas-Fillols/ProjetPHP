@@ -24,7 +24,7 @@
         $_SESSION['password']=$mdp;
         $_SESSION['email']=$dbRow['email'];
 
-        require '../controller/myprofilController.php';
+        header("Location: ../controller/myprofilController.php");
 
     } else {
         echo 'Faux';

@@ -1,6 +1,6 @@
 <?php
     try{
-        require 'controller/indexController.php';
+        header("Location:controller/indexController.php");
 
     }catch(Exception $e){
 

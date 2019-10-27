@@ -16,4 +16,4 @@
 
     $_SESSION['email'] = $email;
 
-    require '../controller/myprofilController.php';
+    header( "Location: ../controller/myprofilController.php");

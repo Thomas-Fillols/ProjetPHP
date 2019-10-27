@@ -34,7 +34,7 @@
 
             access_bd($dbLink,$query);
 
-            require '../controller/loginController.php';
+            header("Location: ../controller/loginController.php");
         }else{
             echo 'Vous n\'avez pas validé les conditions d\'utilisation.';
         }

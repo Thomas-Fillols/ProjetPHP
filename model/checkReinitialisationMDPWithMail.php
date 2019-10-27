@@ -24,9 +24,9 @@
         $message = 'Veuillez rentrez votre nouveau mot de passe : ' . $nouveauMdp . PHP_EOL;
         mail($email,$subject,$message);
 
-        require '../controller/loginController.php';
+        header("Location: ../controller/loginController.php");
 
     } else {
         echo 'Erreur, mauvais E-mail';
-        require '../controller/reinitialiserMDPWithMailController.php';
+        header("../controller/reinitialiserMDPWithMailController.php");
     }

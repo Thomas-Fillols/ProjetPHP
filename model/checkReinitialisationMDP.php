@@ -14,4 +14,4 @@
 
     access_bd($dbLink,$query);
 
-    require '../controller/loginController.php';
+    header ("Location: ../controller/loginController.php");

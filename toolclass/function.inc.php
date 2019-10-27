@@ -19,3 +19,9 @@
         }
         return $dbResult;
     }
+
+    function verif_connect_user(){
+        if (!isset($_SESSION['login'])){
+            header("Location: ../erreur.php");
+        }
+    }

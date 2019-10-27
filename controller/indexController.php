@@ -1,3 +1,3 @@
 <?php
 
-    require_once 'view/accueilView.php';
+    require '../view/accueilView.php';
