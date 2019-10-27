@@ -1,4 +1,8 @@
 <?php
+    require '../toolclass/function.inc.php';
+    require '../toolclass/variable.inc.php';
+
+    $dbLink = call_data_base();
 
     if(isset($_POST['email'])) {
         $email = $_POST['email'];
@@ -17,10 +21,13 @@
 
         access_bd($dbLink,$query);
 
-        $date = getdate();
         $message = 'Veuillez rentrez votre nouveau mot de passe : ' . $nouveauMdp . PHP_EOL;
         mail($email,$subject,$message);
 
+        require '../controller/loginController.php';
+
     } else {
         echo 'Erreur, mauvais E-mail';
+        require '../controller/reinitialiserMDPWithMailController.php';
     }
+?>
