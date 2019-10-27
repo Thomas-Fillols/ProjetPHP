@@ -30,4 +30,3 @@
         echo 'Erreur, mauvais E-mail';
         require '../controller/reinitialiserMDPWithMailController.php';
     }
-?>
