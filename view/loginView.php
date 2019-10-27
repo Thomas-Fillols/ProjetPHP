@@ -15,7 +15,7 @@
 
     <input type="password" name="mdp">Mot de passe<br/>
 
-    <input type="submit" name="action" value="connection">
+    <input type="submit" name="action" value="connexion">
 </form>
 <div>
     <a href="reinitialiserMDPWithMailView.php" name="reinitialisationMDP">Mot de passe oublié ?</a>
