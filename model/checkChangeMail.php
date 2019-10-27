@@ -12,8 +12,8 @@
 
     $query="UPDATE utilisateur SET email ='$email' WHERE pseudo = '$pseudo'";
 
-    var_dump($query);
-
     access_bd($dbLink,$query);
 
-    //require '../controller/myprofilController.php';
+    $_SESSION['email'] = $email;
+
+    require '../controller/myprofilController.php';

@@ -21,7 +21,7 @@
 
         $_SESSION['login']='true';
         $_SESSION['pseudo']=$utilisateur;
-        $_SESSION['password']=md5($mdp);
+        $_SESSION['password']=$mdp;
         $_SESSION['email']=$dbRow['email'];
 
         require '../controller/myprofilController.php';

@@ -1,5 +1,7 @@
 <?php
 
+session_start();
+
 $pseudo = $_SESSION['pseudo'];
 $password = $_SESSION['password'];
 $email = $_SESSION['email'];
