@@ -27,5 +27,5 @@
         header("Location: ../controller/myprofilController.php");
 
     } else {
-        echo 'Faux';
+        header('Location: ../view/erreur.php?erreur=PSEUDO_MDP_FAUX');
     }

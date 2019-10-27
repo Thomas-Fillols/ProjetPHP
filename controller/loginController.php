@@ -1,3 +1,3 @@
 <?php
-        require '../view/loginView.php';
+    require '../view/loginView.php';
 

@@ -3,6 +3,6 @@
 
     session_start();
 
-    verif_connect_user();
+    verif_connect_user("ERREUR_CONNECTION");
 
     require '../view/reinitialiserMDPView.php';

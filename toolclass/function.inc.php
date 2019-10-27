@@ -20,8 +20,8 @@
         return $dbResult;
     }
 
-    function verif_connect_user(){
+    function verif_connect_user($erreur){
         if (!isset($_SESSION['login'])){
-            header("Location: ../toolclass/erreur.php");
+            header('Location: ../view/erreur.php?erreur='.$erreur);
         }
     }

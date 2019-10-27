@@ -2,7 +2,7 @@
     require '../toolclass/variable.inc.php';
     require '../toolclass/function.inc.php';
 
-    verif_connect_user();
+    verif_connect_user("ERREUR_CONNECTION");
 
     session_start();
 

@@ -4,7 +4,7 @@
 
     $dbLink = call_data_base();
 
-    if(isset($_POST['identifiant'])){
+    if(isset($_POST['identifiant'])) {
         $utilisateur = $_POST['identifiant'];
     }
 
@@ -20,24 +20,38 @@
         $mdpverif = $_POST['mdpverif'];
     }
 
-    if(isset($_POST['condition'])){
+    if(isset($_POST['condition'])) {
         $checkbox = $_POST['condition'];
     }
 
-    if($mdp == $mdpverif){
-        if($checkbox == 'ok'){
-            $query='INSERT INTO utilisateur(pseudo,password,email,role)VALUES(';
-            $query.='"'.$utilisateur.'",';
-            $query.='"'.md5($mdp).'",';
-            $query.='"'.$email.'",';
-            $query.='"'.$role.'")';
+    $query="SELECT pseudo FROM utilisateur WHERE pseudo ='$utilisateur'";
+    $dbRow=mysqli_fetch_assoc(access_bd($dbLink,$query));
 
-            access_bd($dbLink,$query);
+    if ($dbRow['pseudo'] == NULL){
+        $query="SELECT email FROM utilisateur WHERE email ='$email'";
+        $dbRow=mysqli_fetch_assoc(access_bd($dbLink,$query));
+        if ($dbRow['email'] == NULL){
+            if($mdp == $mdpverif){
+                if($checkbox == 'ok'){
+                    $query='INSERT INTO utilisateur(pseudo,password,email,role)VALUES(';
+                    $query.='"'.$utilisateur.'",';
+                    $query.='"'.md5($mdp).'",';
+                    $query.='"'.$email.'",';
+                    $query.='"'.$role.'")';
 
-            header("Location: ../controller/loginController.php");
+                    access_bd($dbLink,$query);
+
+                    header("Location: ../controller/loginController.php");
+                }else{
+                    header('Location: ../view/erreur.php?erreur=CONDITION_UTILISATION');
+                }
+            }else{
+                header('Location: ../view/erreur.php?erreur=VERIF_MDP_FAUX');
+            }
         }else{
-            echo 'Vous n\'avez pas validé les conditions d\'utilisation.';
+            header('Location: ../view/erreur.php?erreur=MAIL_EXIST');
         }
     }else{
-        echo 'La vérification de mot de passe est fausse.' ;
+        header('Location: ../view/erreur.php?erreur=NAME_EXIST');
     }
+
