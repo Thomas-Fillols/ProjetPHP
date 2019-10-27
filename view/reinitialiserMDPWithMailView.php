@@ -14,7 +14,7 @@
     <p>Entrez votre mail :</p>
     <input type="text" name="email"/><br/>
 
-    <input type="submit" name="action" value="connection">
+    <input type="submit" name="action" value="connexion">
 </form>
 
 </body>

@@ -1,10 +1,10 @@
 <?php
-    require '../toolclass/variable.inc.php';
     require '../toolclass/function.inc.php';
-
-    verif_connect_user("ERREUR_CONNECTION");
+    require '../toolclass/variable.inc.php';
 
     session_start();
+
+    verif_connect_user("ERREUR_CONNECTION");
 
     require '../model/checkMyprofil.php';
 

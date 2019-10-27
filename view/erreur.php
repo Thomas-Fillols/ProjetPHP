@@ -24,6 +24,9 @@
             case 'CONDITION_UTILISATION':
                 $messageErreur = 'Vous n\'avez pas validez les conditions d\'utilisation';
                 break;
+            case 'ERROR_ISSET':
+                $messageErreur = 'Vous avez des variables non définies';
+                break;
         }
         echo $messageErreur;
     }

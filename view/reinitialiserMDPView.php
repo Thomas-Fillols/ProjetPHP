@@ -14,7 +14,7 @@
     <p>Entrez votre nouveau MDP :</p>
     <input type="text" name="MDP"/><br/>
 
-    <input type="submit" name="action" value="connection">
+    <input type="submit" name="action" value="connexion">
 </form>
 
 </body>
