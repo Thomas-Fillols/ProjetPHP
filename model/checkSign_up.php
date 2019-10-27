@@ -1,4 +1,6 @@
 <?php
+    require '../toolclass/function.inc.php';
+    require '../toolclass/variable.inc.php';
 
     $dbLink = call_data_base();
 
@@ -31,6 +33,8 @@
             $query.='"'.$role.'")';
 
             access_bd($dbLink,$query);
+
+            require '../controller/loginController.php';
         }else{
             echo 'Vous n\'avez pas validé les conditions d\'utilisation.';
         }

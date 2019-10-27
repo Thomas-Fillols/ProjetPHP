@@ -1,14 +1,9 @@
 <?php
+    try{
+        require 'controller/indexController.php';
 
-require('toolclass/function.inc.php');
+    }catch(Exception $e){
 
-try{
+        die ('Erreur : '.$e->getMessage());
 
-    $bdLink = call_data_base();
-    require ('controller/indexController.php');
-
-}catch(Exception $e){
-
-    die ('Erreur : '.$e->getMessage());
-
-}
+    }
