@@ -7,31 +7,31 @@
     if(isset($_POST['identifiant'])) {
         $utilisateur = $_POST['identifiant'];
     }else{
-        header('Location: ../view/erreur.php?erreur=ERROR_ISSET');
+        header('Location: ../controller/erreurController.php?erreur=ERROR_ISSET');
     }
 
     if(isset($_POST['mdp'])){
         $mdp = $_POST['mdp'];
     }else{
-        header('Location: ../view/erreur.php?erreur=ERROR_ISSET');
+        header('Location: ../controller/erreurController.php?erreur=ERROR_ISSET');
     }
 
     if(isset($_POST['email'])){
         $email = $_POST['email'];
     }else{
-        header('Location: ../view/erreur.php?erreur=ERROR_ISSET');
+        header('Location: ../controller/erreurController.php?erreur=ERROR_ISSET');
     }
 
     if(isset($_POST['mdpverif'])){
         $mdpverif = $_POST['mdpverif'];
     }else{
-        header('Location: ../view/erreur.php?erreur=ERROR_ISSET');
+        header('Location: ../controller/erreurController.php?erreur=ERROR_ISSET');
     }
 
     if(isset($_POST['condition'])) {
         $checkbox = $_POST['condition'];
     }else{
-        header('Location: ../view/erreur.php?erreur=ERROR_ISSET');
+        header('Location: ../controller/erreurController.php?erreur=ERROR_ISSET');
     }
 
     $query="SELECT pseudo FROM utilisateur WHERE pseudo ='$utilisateur'";
@@ -53,15 +53,15 @@
 
                     header("Location: ../controller/loginController.php");
                 }else{
-                    header('Location: ../view/erreur.php?erreur=CONDITION_UTILISATION');
+                    header('Location: ../controller/erreurController.php?erreur=CONDITION_UTILISATION');
                 }
             }else{
-                header('Location: ../view/erreur.php?erreur=VERIF_MDP_FAUX');
+                header('Location: ../controller/erreurController.php?erreur=VERIF_MDP_FAUX');
             }
         }else{
-            header('Location: ../view/erreur.php?erreur=MAIL_EXIST');
+            header('Location: ../controller/erreurController.php?erreur=MAIL_EXIST');
         }
     }else{
-        header('Location: ../view/erreur.php?erreur=NAME_EXIST');
+        header('Location: ../controller/erreurController.php?erreur=NAME_EXIST');
     }
 

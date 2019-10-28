@@ -18,6 +18,6 @@
 
             header('Location: ../controller/myprofilController.php');
         }else{
-            header('Location: ../view/erreur.php?erreur=MAIL_EXIST');
+            header('Location: ../controller/erreurController.php?erreur=MAIL_EXIST');
         }
     }

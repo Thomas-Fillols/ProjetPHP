@@ -22,6 +22,6 @@
 
     function verif_connect_user($erreur){
         if (!isset($_SESSION['login'])){
-            header('Location: ../view/erreur.php?erreur='.$erreur);
+            header('Location: ../controller/erreurController.php?erreur='.$erreur);
         }
     }

@@ -1,8 +1,9 @@
 <?php
-    if (isset($_GET['erreur'])){
-        $messageErreur = '';
 
-        switch ($_GET['erreur']){
+    $messageErreur = '';
+
+    if (isset($_GET['erreur'])) {
+        switch ($_GET['erreur']) {
             case 'CHAMPS_INCOMPLET':
                 $messageErreur = 'Vous n\'avez pas remplis tous les champs !';
                 break;
@@ -25,8 +26,9 @@
                 $messageErreur = 'Vous n\'avez pas validez les conditions d\'utilisation';
                 break;
             case 'ERROR_ISSET':
-                $messageErreur = 'Vous avez des variables non définies';
+                $messageErreur = 'Désolé, il y a eu une erreur dans votre connexion. Veuillez vous reconnecter !';
                 break;
+            default:
+                $messageErreur = 'Erreur inconnue';
         }
-        echo $messageErreur;
     }

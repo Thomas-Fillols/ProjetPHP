@@ -13,6 +13,6 @@
         header ("Location: ../controller/loginController.php");
 
     }else{
-        header('Location: ../view/erreur.php?erreur=ERROR_ISSET');
+        header('Location: ../controller/erreurController.php?erreur=ERROR_ISSET');
     }
 

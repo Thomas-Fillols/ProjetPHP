@@ -1,0 +1,92 @@
+body {
+	/*visual*/
+	font-family: 'Open Sans', sans-serif;
+  	font-style: normal;
+  	font-size: 100%;
+
+  	background-image: url("../images/background.png");
+  	background-position: center;
+	background-size: cover;
+}
+
+h2 {
+	/*position/size*/
+	max-width: 600px;
+		margin-top: 50px;
+		margin-bottom: 35px;
+		margin-left: auto;
+		margin-right: auto;
+	text-align: center;
+
+	/*visual*/
+	color: white;
+	font-size: 230%;
+	font-weight: bold;
+	text-transform: uppercase;
+	letter-spacing: 5px;
+}
+
+.page {
+	/*position/size*/
+	min-height: 100vh;
+	max-width: 1000px;
+		padding-left: 10px;
+		padding-right: 10px;
+			margin-left: auto;
+			margin-right: auto;
+
+	/*visual*/
+	color: white;
+	background-color: rgba(0, 0, 0, 0);
+}
+
+
+
+/*  ERROR  */
+
+#sec_error {
+	/*position/size*/
+	padding-top: 125px;
+		margin-bottom: 25px;
+}
+
+#error {
+	/*position/size*/
+	max-width: 500px;
+		padding: 20px;
+			margin-left: auto;
+			margin-right: auto;
+
+	/*visual*/
+	background-color: rgba(0, 0, 0,0.2);
+
+	border-style: solid;
+	border-color: rgba(60, 99, 130,1.0);
+	border-radius: 10px;
+	border-width: 5px;
+}
+
+#error li {
+	/*position/size*/
+	width: 100%;
+    line-height: 46px;
+	text-align: center;
+	/*visual*/
+	overflow: hidden;
+}
+
+#error a {
+	/*position/size*/
+    line-height: 46px;
+
+	/*visual*/
+	color: rgba(200, 200, 200, 1.0);
+	font-size: 100%;
+	font-weight: bold;
+	letter-spacing: 1px;
+}
+
+#error a:hover {
+	/*visual*/
+	color: white;
+}

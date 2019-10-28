@@ -23,9 +23,9 @@
             header("Location: ../controller/loginController.php");
 
         } else {
-            header("../view/erreur.php?erreur=MAIL_EXIST");
+            header("../controller/erreurController.php?erreur=MAIL_EXIST");
         }
     }else{
-        header('Location: ../view/erreur.php?erreur=ERROR_ISSET');
+        header('Location: ../controller/erreurController.php?erreur=ERROR_ISSET');
     }
 
