@@ -51,7 +51,7 @@
 
                     access_bd($dbLink,$query);
 
-                    header("Location: ../controller/loginController.php");
+                    header("Location: ../controller/erreurController.php?erreur=VALIDATION_INSCRIPTION");
                 }else{
                     header('Location: ../controller/erreurController.php?erreur=CONDITION_UTILISATION');
                 }

@@ -17,7 +17,7 @@
 <body>
 <div class="page">
     <section id="sec_error">
-        <h2>Erreur</h2>
+        <h2><?php echo $messageTitre; ?></h2>
 
         <div id="error">
             <ul>

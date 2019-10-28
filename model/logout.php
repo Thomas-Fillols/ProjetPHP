@@ -16,5 +16,5 @@
     session_destroy ();
 
     // On redirige le visiteur vers la page de login
-    header("Location: ../controller/indexController.php");
+    header("Location: ../controller/erreurController.php?erreur=DECONNECTION");
 ?>

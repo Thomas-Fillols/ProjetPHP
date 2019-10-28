@@ -1,5 +1,5 @@
 <?php
-
+    $messageTitre = 'ERREUR';
     $messageErreur = '';
 
     if (isset($_GET['erreur'])) {
@@ -27,6 +27,14 @@
                 break;
             case 'ERROR_ISSET':
                 $messageErreur = 'Désolé, il y a eu une erreur dans votre connexion. Veuillez vous reconnecter !';
+                break;
+            case 'VALIDATION_INSCRIPTION':
+                $messageErreur = 'Félicitation, vous êtes bien inscrit.';
+                $messageTitre = 'BRAVO !';
+                break;
+            case 'DECONNECTION':
+                $messageErreur = 'Vous avez bien été déconnecté.';
+                $messageTitre = 'AU REVOIR.';
                 break;
             default:
                 $messageErreur = 'Erreur inconnue';
