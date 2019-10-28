@@ -21,10 +21,9 @@
             <ul>
                 <li> <a class="left" href="../controller/indexController.php">FreeNote</a> </li>
 
-                <li> <a id="a_inscription" class="right" style="display: none;" href="../controller/sign_upController.php">inscription</a> </li>
-                <li> <a id="a_profil" class="right" href="#">profil</a> </li>
+                <li> <a id="a_profil" class="right" href="../controller/myprofilController.php">profil</a> </li>
                 <li> <a id="a_déconnexion" class="right" href="../model/logout.php">déconnexion</a> </li>
-                <li> <a id="a_connexion" class="right" style="display: none;" href="../controller/loginController.php">connexion</a> </li>
+
             </ul>
         </nav>
     </header>
