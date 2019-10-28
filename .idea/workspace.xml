@@ -1,11 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b3c052bd-f9dc-4174-9588-cfb63165b3bd" name="Default Changelist" comment="modification de mdp presque fini 3">
+    <list default="true" id="b3c052bd-f9dc-4174-9588-cfb63165b3bd" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/public/images/favicon.ico" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/identification/checkReinitialisationMDP.php" beforeDir="false" afterPath="$PROJECT_DIR$/identification/checkReinitialisationMDP.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/identification/page1.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/identification/page2.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/accueilView.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/accueilView.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/changeMailView.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/changeMailView.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/loginView.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/loginView.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/myprofilView.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/myprofilView.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/reinitialiserMDPView.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/reinitialiserMDPView.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/reinitialiserMDPWithMailView.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/reinitialiserMDPWithMailView.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/sign_upView.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/sign_upView.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -18,28 +23,6 @@
       <executable />
     </execution>
   </component>
-  <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/identification/reinitialiserMDP.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="20" column="7" lean-forward="true" selection-start-line="20" selection-start-column="7" selection-end-line="20" selection-end-column="7" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/identification/checkReinitialisationMDP.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="390">
-              <caret line="26" column="8" selection-start-line="26" selection-start-column="8" selection-end-line="26" selection-end-column="8" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
-  </component>
   <component name="Git.Settings">
     <option name="PUSH_AUTO_UPDATE" value="true" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -49,74 +32,21 @@
       </map>
     </option>
   </component>
-  <component name="IdeDocumentHistory">
-    <option name="CHANGED_PATHS">
-      <list>
-        <option value="$PROJECT_DIR$/login.php" />
-        <option value="$PROJECT_DIR$/index.php" />
-        <option value="$PROJECT_DIR$/identification/check.php" />
-        <option value="$PROJECT_DIR$/identification/checkLogin.php" />
-        <option value="$PROJECT_DIR$/identification/sign_up.php" />
-        <option value="$PROJECT_DIR$/identification/login.php" />
-        <option value="$PROJECT_DIR$/identification/page2.php" />
-        <option value="$PROJECT_DIR$/identification/page1.php" />
-        <option value="$PROJECT_DIR$/identification/checkSign_up.php" />
-        <option value="$PROJECT_DIR$/identification/reinitialiserMDP.php" />
-        <option value="$PROJECT_DIR$/identification/checkReinitialisationMDP.php" />
-      </list>
-    </option>
-  </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="137" />
-    <option name="y" value="28" />
-    <option name="width" value="1400" />
-    <option name="height" value="954" />
-  </component>
+  <component name="ProjectId" id="1SmawAKYSKevzbSyxb06wF6cToe" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
-  </component>
-  <component name="ProjectView">
-    <navigator proportions="" version="1">
-      <foldersAlwaysOnTop value="true" />
-    </navigator>
-    <panes>
-      <pane id="Scope" />
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="ProjetPHP" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ProjetPHP" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ProjetPHP" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ProjetPHP" type="462c0819:PsiDirectoryNode" />
-              <item name="conditionG" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ProjetPHP" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ProjetPHP" type="462c0819:PsiDirectoryNode" />
-              <item name="Discussions" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ProjetPHP" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ProjetPHP" type="462c0819:PsiDirectoryNode" />
-              <item name="identification" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-    </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\tfill\PhpstormProjects\ProjetPHP\public\images" />
+      <recent name="C:\Users\tfill\PhpstormProjects\ProjetPHP\public" />
       <recent name="$PROJECT_DIR$/identification" />
     </key>
   </component>
@@ -148,6 +78,9 @@
       <workItem from="1570103032342" duration="21000" />
       <workItem from="1570104619215" duration="5170000" />
       <workItem from="1570601635625" duration="7083000" />
+      <workItem from="1572171501728" duration="15424000" />
+      <workItem from="1572195742363" duration="9822000" />
+      <workItem from="1572269426943" duration="6112000" />
     </task>
     <task id="LOCAL-00001" summary="test">
       <created>1570092703444</created>
@@ -233,40 +166,115 @@
       <option name="project" value="LOCAL" />
       <updated>1570608676289</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="mvc">
+      <created>1572099577120</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1572099577120</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Correction DU P***** de bug que j'ai mis 1 jour a trouver(session_start() se trouvant apres l'attribution des variables $_SESSION au lieu d'avant)">
+      <created>1572106616389</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1572106616389</updated>
+    </task>
+    <task id="LOCAL-00015" summary="mvc changemail">
+      <created>1572108166143</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1572108166143</updated>
+    </task>
+    <task id="LOCAL-00016" summary="correction d'une faute d'orthographe TRES VISIBLE">
+      <created>1572171817166</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1572171817166</updated>
+    </task>
+    <task id="LOCAL-00017" summary="MVC fonctionnel pour change mail, change mdp, my profil et login.">
+      <created>1572177270285</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1572177270285</updated>
+    </task>
+    <task id="LOCAL-00018" summary="Tout ce qui est en rapport avec login fonctionne">
+      <created>1572179307708</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1572179307708</updated>
+    </task>
+    <task id="LOCAL-00019" summary="petit bug reglé">
+      <created>1572179659308</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1572179659309</updated>
+    </task>
+    <task id="LOCAL-00020" summary="inscription fini">
+      <created>1572185697889</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1572185697889</updated>
+    </task>
+    <task id="LOCAL-00021" summary="remplacement de tout les require inutile par des header">
+      <created>1572188442093</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1572188442093</updated>
+    </task>
+    <task id="LOCAL-00022" summary="gestion des erreurs en cours">
+      <created>1572189430913</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1572189430913</updated>
+    </task>
+    <task id="LOCAL-00023" summary="gestion des erreurs, verifiation des formulaires(en cours)">
+      <created>1572205973561</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1572205973561</updated>
+    </task>
+    <task id="LOCAL-00024" summary="verifiation des formulaires(presque fini)">
+      <created>1572208005874</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1572208005874</updated>
+    </task>
+    <task id="LOCAL-00025" summary="petit changement">
+      <created>1572271026772</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1572271026772</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
-  </component>
-  <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="16780000" />
-  </component>
-  <component name="ToolWindowManager">
-    <frame x="-1" y="28" width="1682" height="995" extended-state="6" />
-    <editor active="true" />
-    <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20685434" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.3298731" />
-      <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Database Changes" order="8" />
-      <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info anchor="bottom" id="Terminal" order="10" weight="0.3298731" />
-      <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
-      <window_info anchor="bottom" id="File Transfer" order="12" weight="0.3298731" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Database" order="3" />
-    </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="test" />
@@ -281,75 +289,19 @@
     <MESSAGE value="modification de mdp presque fini" />
     <MESSAGE value="modification de mdp presque fini 2" />
     <MESSAGE value="modification de mdp presque fini 3" />
-    <option name="LAST_COMMIT_MESSAGE" value="modification de mdp presque fini 3" />
-  </component>
-  <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/index.html" />
-    <entry file="file://$PROJECT_DIR$/conditionG/condition.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/identification/login.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="23" column="7" lean-forward="true" selection-start-line="23" selection-start-column="7" selection-end-line="23" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/identification/checkLogin.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="51" lean-forward="true" selection-start-line="13" selection-start-column="51" selection-end-line="13" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/identification/page2.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="11" selection-start-line="1" selection-start-column="11" selection-end-line="1" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/identification/page1.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="13" lean-forward="true" selection-start-line="1" selection-start-column="13" selection-end-line="1" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/identification/checkSign_up.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" column="27" lean-forward="true" selection-start-line="20" selection-start-column="27" selection-end-line="20" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/identification/sign_up.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="25" selection-start-line="25" selection-end-line="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/identification/reinitialiserMDP.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" column="7" lean-forward="true" selection-start-line="20" selection-start-column="7" selection-end-line="20" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/identification/checkReinitialisationMDP.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="26" column="8" selection-start-line="26" selection-start-column="8" selection-end-line="26" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
+    <MESSAGE value="mvc" />
+    <MESSAGE value="Correction DU P***** de bug que j'ai mis 1 jour a trouver(session_start() se trouvant apres l'attribution des variables $_SESSION au lieu d'avant)" />
+    <MESSAGE value="mvc changemail" />
+    <MESSAGE value="correction d'une faute d'orthographe TRES VISIBLE" />
+    <MESSAGE value="MVC fonctionnel pour change mail, change mdp, my profil et login." />
+    <MESSAGE value="Tout ce qui est en rapport avec login fonctionne" />
+    <MESSAGE value="petit bug reglé" />
+    <MESSAGE value="inscription fini" />
+    <MESSAGE value="remplacement de tout les require inutile par des header" />
+    <MESSAGE value="gestion des erreurs en cours" />
+    <MESSAGE value="gestion des erreurs, verifiation des formulaires(en cours)" />
+    <MESSAGE value="verifiation des formulaires(presque fini)" />
+    <MESSAGE value="petit changement" />
+    <option name="LAST_COMMIT_MESSAGE" value="petit changement" />
   </component>
 </project>

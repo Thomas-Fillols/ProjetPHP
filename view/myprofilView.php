@@ -1,17 +1,54 @@
-<?php
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Mickaël Maurer">
 
-    echo 'Votre login est '.$pseudo.'.';
-    echo '<br />';
-    echo 'Votre login est '.$password.'.';
-    echo '<br />';
-    echo '<a href="../controller/reinitialiserMDPController.php">Changer de mot de passe</a><br/>';
-    echo 'Votre E-mail est : '.$email.'.';
-    echo '<br />';
-    echo '<a href="../controller/changeMailController.php">Changer de mail</a>';
-    echo '<br />';
-    echo 'Votre rôle est : '.$role;
-    echo '<br />';
-    echo '<br />';
+    <title>FreeNote</title>
+    <link rel="icon" type="image/x-icon" href="../public/images/favicon.ico">
+
+    <link rel="stylesheet"  type="text/css"   href="../public/css/reset.css">
+    <link id="pagestyle"  rel="stylesheet"  type="text/css" href="../public/css/profil.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+</head>
+
+<body>
+<div class="page">
+    <header id="menu">
+        <nav>
+            <ul>
+                <li> <a class="left" href="#">FreeNote</a> </li>
+
+                <li> <a id="a_inscription" class="right" style="display: none;" href="#">inscription</a> </li>
+                <li> <a id="a_profil" class="right" href="#">profil</a> </li>
+                <li> <a id="a_déconnexion" class="right" href="#">déconnexion</a> </li>
+                <li> <a id="a_connexion" class="right" style="display: none;" href="#">connexion</a> </li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="sec_profil">
+        <h2>Mon profil</h2>
+        <div id="profil">
+            <ul>
+                <li><span>Identifiant : <?php echo $pseudo; ?></span></li>
+                <li><span>email : <?php echo $email; ?></span></li>
+                <li><span>Modifier :
+                    <a href="../controller/changeMailController.php">email</a>
+                    /
+                    <a href="../controller/reinitialiserMDPController.php">mot de passe</a>
+                </span>
+                </li>
+                <li> <span>Rôle : <?php echo $role; ?></span></li>
+            </ul>
+            <a href="../model/logout.php">Déconnection</a>
+        </div>
+
+    </section>
+</div>
+</body>
+</html>
 
 // On affiche un lien pour fermer notre session
-    echo '<a href="../model/logout.php">Déconnection</a>';
