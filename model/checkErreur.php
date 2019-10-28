@@ -17,26 +17,33 @@
                 $messageErreur = 'Le mail existe déjà.';
                 break;
             case 'NAME_EXIST':
-                $messageErreur = 'Le nom existe déjà';
+                $messageErreur = 'Le nom existe déjà.';
                 break;
             case 'VERIF_MDP_FAUX':
                 $messageErreur = 'La verification de mot de passe à échoué.';
                 break;
             case 'CONDITION_UTILISATION':
-                $messageErreur = 'Vous n\'avez pas validez les conditions d\'utilisation';
+                $messageErreur = 'Vous n\'avez pas validez les conditions d\'utilisation.';
                 break;
             case 'ERROR_ISSET':
                 $messageErreur = 'Désolé, il y a eu une erreur dans votre connexion. Veuillez vous reconnecter !';
                 break;
+            case 'MAIL_VALIDATION_ERROR':
+                $messageErreur = 'Vous n\'avez pas rentré un email valide. Veuillez recommencer s\'il vous plaît.';
+                break;
+            case 'NOUVEAU_MDP':
+                $messageErreur = 'Votre changement de mot de passe a bien été validé. Allez verifier votre e-mail.';
+                $messageTitre = 'CHANGEMENT DE MOT DE PASSE';
+                break;
             case 'VALIDATION_INSCRIPTION':
-                $messageErreur = 'Félicitation, vous êtes bien inscrit.';
+                $messageErreur = 'Félicitation, vous êtes bien inscrit. Allez vous connecter dès maintenant !';
                 $messageTitre = 'BRAVO !';
                 break;
             case 'DECONNECTION':
                 $messageErreur = 'Vous avez bien été déconnecté.';
-                $messageTitre = 'AU REVOIR.';
+                $messageTitre = 'AU REVOIR';
                 break;
             default:
-                $messageErreur = 'Erreur inconnue';
+                $messageErreur = 'Erreur inconnue.';
         }
     }

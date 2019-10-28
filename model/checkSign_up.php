@@ -16,10 +16,14 @@
         header('Location: ../controller/erreurController.php?erreur=ERROR_ISSET');
     }
 
-    if(isset($_POST['email'])){
-        $email = $_POST['email'];
+    if (preg_match("#^[a-z0-9._-]+@[a-z0-9._-]{2,}\.[a-z]{2,4}$#", $_POST['email'])){
+        if(isset($_POST['email'])){
+            $email = $_POST['email'];
+        }else{
+            header('Location: ../controller/erreurController.php?erreur=ERROR_ISSET');
+        }
     }else{
-        header('Location: ../controller/erreurController.php?erreur=ERROR_ISSET');
+        header('Location: ../controller/erreurController.php?erreur=MAIL_VALIDATION_ERROR');
     }
 
     if(isset($_POST['mdpverif'])){

@@ -20,7 +20,7 @@
             $message = 'Veuillez rentrez votre nouveau mot de passe : ' . $nouveauMdp . PHP_EOL;
             mail($email,$subject,$message);
 
-            header("Location: ../controller/loginController.php");
+            header("Location: ../controller/erreurController.php?erreur=NOUVEAU_MDP");
 
         } else {
             header("../controller/erreurController.php?erreur=MAIL_EXIST");
