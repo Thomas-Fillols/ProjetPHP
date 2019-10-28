@@ -2,8 +2,8 @@
     require '../toolclass/function.inc.php';
     require '../toolclass/variable.inc.php';
 
-    verif_connect_user("ERREUR_CONNECTION");
-
     session_start();
+
+    verif_connect_user("ERREUR_CONNECTION");
 
     require '../view/reinitialiserMDPView.php';
