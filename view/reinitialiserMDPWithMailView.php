@@ -19,12 +19,12 @@
     <header id="menu">
         <nav>
             <ul>
-                <li> <a class="left" href="#">FreeNote</a> </li>
+                <li> <a class="left" href="../controller/indexController.php">FreeNote</a> </li>
 
-                <li> <a id="a_inscription" class="right" href="#">inscription</a> </li>
+                <li> <a id="a_inscription" class="right" href="../controller/sign_upController.php">inscription</a> </li>
                 <li> <a id="a_profil" class="right" style="display: none;" href="#">profil</a> </li>
                 <li> <a id="a_déconnexion" class="right" style="display: none;" href="#">déconnexion</a> </li>
-                <li> <a id="a_connexion" class="right" href="#">connexion</a> </li>
+                <li> <a id="a_connexion" class="right" href="../controller/loginController.php">connexion</a> </li>
             </ul>
         </nav>
     </header>
