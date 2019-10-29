@@ -1,20 +1,13 @@
 <?php
-$estConnecte = '';
-$nonConnecte = '';
-
-$pageCourante = 1;
-$discussionsParPage = 2;
-
-$dbLink = new PDO('mysql:host=mysql-freenote.alwaysdata.net;dbname=freenote_sql', 'freenote','zawarudo');
-
-$discussionsTotalesReq = $dbLink->query('SELECT * FROM utilisateur');
-$discussionsTotales = $discussionsTotalesReq->rowCount();
-$pagesTotales = ceil($discussionsTotales/$discussionsParPage);
-
-session_start();
+    session_start();
 
     if (isset($_SESSION['login'])){
         $estConnecte = 'style="display: none;"';
+        $connect = $dbLink->query("SELECT role FROM utilisateur WHERE pseudo='$pseudo'");
+        $testRole = $connect->fetch();
+        if ($testRole['role'] == 1){
+            $adminConnecte = '';
+        }
     }else{
         $nonConnecte = 'style="display: none;"';
     }

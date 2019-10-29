@@ -64,11 +64,12 @@
                 for($i=1;$i<=$pagesTotales;$i++) {
                     if($i == $pageCourante) {
                         echo $i.' ';
-                    } else {
-                       echo '<a id="button_switch_nb_bloc" href="../controller/indexController.php?page='.$i.'">'.$i.'</a> ';
-                    }
+                    } else { ?>
+                       <a id="button_switch_nb_bloc" href="../controller/indexController.php?page=<?php echo $i; ?>"><?php echo $i; ?></a>
+                    <?php }
                 }
             ?>
+            <input type="number" <?php echo $adminConnecte; ?>>
         </div>
     </section>
 </div>
