@@ -43,9 +43,19 @@
 
     <section id="sec_discussion">
         <h2>discussions</h2>
+
         <div class="bloc_discussion">
             <div class="bloc_title">
-                Titre de la discussion Titre de la discussion Titre de la discussion Titre de la discussion Titre de la discussion Titre de la discussion Titre de la discussion
+                <?php
+                    while($element = $discussions->fetch()) {
+                        ?>
+                        <b>Nom :<?php echo $element['pseudo']; ?></b><br />
+                        <b>Email :<?php echo $element['email']; ?></b><br />
+                        <br /><br />
+                        <?php
+                    }
+                ?>
+
             </div>
 
             <div class="bloc_state">
@@ -64,6 +74,15 @@
         </div>
 
         <div class="button">
+            <?php
+                for($i=1;$i<=$pagesTotales;$i++) {
+                    if($i == $pageCourante) {
+                        echo $i.' ';
+                    } else {
+                       echo '<a id="button_switch_nb_bloc" href="../controller/indexController.php?page='.$i.'">'.$i.'</a> ';
+                    }
+                }
+            ?>
             <button id="button_prev">précédent</button>
             <button id="button_next">suivant</button>
             <button id="button_switch_nb_bloc">2</button>
