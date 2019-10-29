@@ -41,7 +41,7 @@
                 </li>
                 <li> <span>Rôle : <?php echo $role; ?></span></li>
             </ul>
-            <a href="../model/logout.php">Déconnection</a>
+            <a href="../model/logout.php">Déconnexion</a>
         </div>
 
     </section>
