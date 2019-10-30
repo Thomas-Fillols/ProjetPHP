@@ -8,9 +8,17 @@
         if ($testRole['role'] == 1){
             $adminConnecte = '';
             if (isset($_POST['nombre'])){
-                $nombre = $_POST['nombre'];
-                $connect = $dbLink->query("UPDATE Pagination SET pagination='$nombre'");
-                $testRole = $connect->fetch();
+                if (!is_numeric($_POST['nombre'])){
+                    header('Location: ../controller/erreurController.php?erreur=NO_NUMERIC');
+                }else{
+                    if ($_POST['nombre'] <= 0){
+                        $nombre = 2;
+                    }else{
+                        $nombre = $_POST['nombre'];
+                    }
+                    $connect = $dbLink->query("UPDATE Pagination SET pagination='$nombre'");
+                    $testRole = $connect->fetch();
+                }
             }
         }
     }else{

@@ -31,6 +31,9 @@
             case 'MAIL_VALIDATION_ERROR':
                 $messageErreur = 'Vous n\'avez pas rentré un email valide. Veuillez recommencer s\'il vous plaît.';
                 break;
+            case 'NO_NUMERIC':
+                $messageErreur = 'Vous devez rentrer une valeur une numerique';
+                break;
             case 'NOUVEAU_MDP':
                 $messageErreur = 'Votre changement de mot de passe a bien été validé. Allez verifier votre e-mail.';
                 $messageTitre = 'CHANGEMENT DE MOT DE PASSE';
