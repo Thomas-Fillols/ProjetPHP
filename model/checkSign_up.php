@@ -2,8 +2,6 @@
     require '../toolclass/function.inc.php';
     require '../toolclass/variable.inc.php';
 
-    $dbLink = call_data_base();
-
     if(isset($_POST['identifiant'])) {
         $utilisateur = $_POST['identifiant'];
     }else{
@@ -38,12 +36,12 @@
         header('Location: ../controller/erreurController.php?erreur=ERROR_ISSET');
     }
 
-    $query="SELECT pseudo FROM utilisateur WHERE pseudo ='$utilisateur'";
-    $dbRow=mysqli_fetch_assoc(access_bd($dbLink,$query));
+    $dbRowReq = $dbLink->query("SELECT pseudo FROM utilisateur WHERE pseudo ='$utilisateur'");
+    $dbRox = $dbRowReq->fetch();
 
     if ($dbRow['pseudo'] == NULL){
-        $query="SELECT email FROM utilisateur WHERE email ='$email'";
-        $dbRow=mysqli_fetch_assoc(access_bd($dbLink,$query));
+        $dbRowReq = $dbLink->query("SELECT email FROM utilisateur WHERE email ='$email'");
+        $dbRox = $dbRowReq->fetch();
         if ($dbRow['email'] == NULL){
             if($mdp == $mdpverif){
                 if($checkbox == 'ok'){
@@ -53,7 +51,8 @@
                     $query.='"'.$email.'",';
                     $query.='"'.$role.'")';
 
-                    access_bd($dbLink,$query);
+                    $dbRowReq = $dbLink->query($query);
+                    $dbRowReq->fetch();
 
                     header("Location: ../controller/erreurController.php?erreur=VALIDATION_INSCRIPTION");
                 }else{

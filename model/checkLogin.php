@@ -1,7 +1,6 @@
 <?php
     require '../toolclass/function.inc.php';
-
-    $dbLink = call_data_base();
+    require '../toolclass/variable.inc.php';
 
     if(isset($_POST['identifiant'])){
         $utilisateur= $_POST['identifiant'];
@@ -15,8 +14,8 @@
         header('Location: ../controller/erreurController.php?erreur=ERROR_ISSET');
     }
 
-    $query="SELECT pseudo,password,email FROM utilisateur where pseudo = '$utilisateur' and password = '$mdp'";
-    $dbRow=mysqli_fetch_assoc(access_bd($dbLink,$query));
+    $dbRowReq = $dbLink->query("SELECT pseudo,password,email FROM utilisateur where pseudo = '$utilisateur' and password = '$mdp'");
+    $dbRow=$dbRowReq->fetch();
 
     if ($dbRow['pseudo'] == $utilisateur && $dbRow['password'] == $mdp) {
         session_start();

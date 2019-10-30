@@ -4,16 +4,15 @@
 
     session_start();
 
-    $dbLink = call_data_base();
 
     if(isset($_POST['email'])) {
         $email = $_POST['email'];
-        $query="SELECT email FROM utilisateur WHERE email ='$email' ";
-        $dbRow=mysqli_fetch_assoc(access_bd($dbLink,$query));
+        $dbRowReq = $dbLink->query("SELECT email FROM utilisateur WHERE email ='$email' ");
+        $dbRow=$dbRowReq->fetch();
 
         if ($dbRow['email'] == NULL){
-            $query = "UPDATE utilisateur SET email ='$email' WHERE pseudo = '$pseudo'";
-            access_bd($dbLink, $query);
+            $dbRowReq = $dbLink->query("UPDATE utilisateur SET email ='$email' WHERE pseudo = '$pseudo'");
+            $dbRowReq->fetch();
             $_SESSION['email'] = $email;
 
             header('Location: ../controller/myprofilController.php');
