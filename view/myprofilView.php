@@ -32,11 +32,11 @@
         <div id="profil">
             <ul>
                 <li><span>Identifiant : <?php echo $pseudo; ?></span></li>
-                <li><span>Email : <?php echo $email; ?></span></li>
+                <li><span>E-mail : <?php echo $email; ?></span></li>
                 <li><span>Modifier :
-                    <a href="../controller/changeMailController.php">email</a>
-
-                    <a href="../controller/reinitialiserMDPController.php">mot de passe</a>
+                    <a href="../controller/changeMailController.php">E-mail</a>
+                    /
+                    <a href="../controller/reinitialiserMDPController.php">Mot de passe</a>
                 </span>
                 </li>
                 <li> <span>Rôle : <?php echo $role; ?></span></li>
