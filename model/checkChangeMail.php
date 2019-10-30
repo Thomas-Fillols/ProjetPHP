@@ -7,11 +7,11 @@
 
     if(isset($_POST['email'])) {
         $email = $_POST['email'];
-        $dbRowReq = $dbLink->query("SELECT email FROM utilisateur WHERE email ='$email' ");
+        $dbRowReq = $dbLink->prepare("SELECT email FROM utilisateur WHERE email ='$email' ");
         $dbRow=$dbRowReq->fetch();
 
         if ($dbRow['email'] == NULL){
-            $dbRowReq = $dbLink->query("UPDATE utilisateur SET email ='$email' WHERE pseudo = '$pseudo'");
+            $dbRowReq = $dbLink->prepare("UPDATE utilisateur SET email ='$email' WHERE pseudo = '$pseudo'");
             $dbRowReq->fetch();
             $_SESSION['email'] = $email;
 

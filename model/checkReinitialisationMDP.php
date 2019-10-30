@@ -6,7 +6,7 @@
 
     if(isset($_POST['MDP'])) {
         $MDP = md5($_POST['MDP']);
-        $dbRowReq = $dbLink->query("UPDATE utilisateur SET utilisateur.password ='$MDP' WHERE pseudo ='$pseudo'");
+        $dbRowReq = $dbLink->prepare("UPDATE utilisateur SET utilisateur.password ='$MDP' WHERE pseudo ='$pseudo'");
         $dbRowReq->fetch();
         header ("Location: ../controller/loginController.php");
 

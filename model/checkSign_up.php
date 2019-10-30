@@ -36,11 +36,12 @@
         header('Location: ../controller/erreurController.php?erreur=ERROR_ISSET');
     }
 
-    $dbRowReq = $dbLink->query("SELECT pseudo FROM utilisateur WHERE pseudo ='$utilisateur'");
+    $query = "SELECT pseudo FROM utilisateur WHERE pseudo ='$utilisateur'";
+    $dbRowReq = $dbLink->prepare($query);
     $dbRox = $dbRowReq->fetch();
 
     if ($dbRow['pseudo'] == NULL){
-        $dbRowReq = $dbLink->query("SELECT email FROM utilisateur WHERE email ='$email'");
+        $dbRowReq = $dbLink->prepare("SELECT email FROM utilisateur WHERE email ='$email'");
         $dbRox = $dbRowReq->fetch();
         if ($dbRow['email'] == NULL){
             if($mdp == $mdpverif){
@@ -51,7 +52,7 @@
                     $query.='"'.$email.'",';
                     $query.='"'.$role.'")';
 
-                    $dbRowReq = $dbLink->query($query);
+                    $dbRowReq = $dbLink->prepare($query);
                     $dbRowReq->fetch();
 
                     header("Location: ../controller/erreurController.php?erreur=VALIDATION_INSCRIPTION");
