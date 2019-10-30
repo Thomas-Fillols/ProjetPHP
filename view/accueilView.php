@@ -43,23 +43,17 @@
 
     <section id="sec_discussion">
         <h2>discussions</h2>
+        <a id="button_new_discussion" href="#">nouvelle discussion</a>
         <?php
             while($element = $discussions->fetch()) { ?>
                 <div class="bloc_discussion">
-                    <div class="bloc_title">
-                        <b>Nom : <?php echo $element['pseudo']; ?></b><br />
-                        <b>Email : <?php echo $element['email']; ?></b><br />
-                    </div>
-
-                    <div class="bloc_state">
-                        <figure class="dot"></figure>
-                    </div>
+                    <a href="#"><?php echo $element['pseudo']; ?></a>
                 </div>
             <?php
             }
         ?>
 
-        <div class="button">
+        <div class="bloc_button">
             <?php
                 for($i=1;$i<=$pagesTotales;$i++) {
                     /*if($i == $pageCourante) {
@@ -76,7 +70,7 @@
                             echo $i;
                         }
                         else { ?>
-                            <a id="button_switch_nb_bloc" href="../controller/indexController.php?page=<?php echo $i; ?>"><?php echo $i; ?></a>
+                            <a class="button_switch_nb_bloc" href="../controller/indexController.php?page=<?php echo $i; ?>"><?php echo $i; ?></a>
                         <?php }
                         if($i==1 && $pageCourante>3) {
                             echo '...';
@@ -85,9 +79,8 @@
                 }
             ?>
             <form action="../controller/indexController.php" method="post" <?php echo $adminConnecte; ?>>
-                <div id="form">
-                    <input type="number" name="nombre">
-                </div>
+                <label>Nombre de discussion : </label>
+                <input type="number" name="nombre">
                 <input type="submit" name="action" value="Modifier">
             </form>
         </div>

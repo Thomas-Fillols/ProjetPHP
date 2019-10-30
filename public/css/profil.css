@@ -1,21 +1,25 @@
 body {
 	/*visual*/
 	font-family: 'Open Sans', sans-serif;
-  	font-style: normal;
-  	font-size: 100%;
+	font-style: normal;
+	font-size: 100%;
+	line-height: 130%;
 
-  	background-image: url("../images/background.png");
-  	background-position: center;
+	background-image: url("../images/background.png");
+	background-position: center;
 	background-size: cover;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
 }
 
 h2 {
 	/*position/size*/
 	max-width: 600px;
-		margin-top: 50px;
-		margin-bottom: 35px;
-		margin-left: auto;
-		margin-right: auto;
+	margin-top: 50px;
+	margin-bottom: 35px;
+	margin-left: auto;
+	margin-right: auto;
+	line-height: 100%;
 	text-align: center;
 
 	/*visual*/
@@ -24,16 +28,19 @@ h2 {
 	font-weight: bold;
 	text-transform: uppercase;
 	letter-spacing: 5px;
+
+	overflow: hidden;
+	text-overflow: ellipsis;
 }
 
 .page {
 	/*position/size*/
 	min-height: 100vh;
 	max-width: 1000px;
-		padding-left: 10px;
-		padding-right: 10px;
-			margin-left: auto;
-			margin-right: auto;
+	padding-left: 10px;
+	padding-right: 10px;
+	margin-left: auto;
+	margin-right: auto;
 
 	/*visual*/
 	color: white;
@@ -47,7 +54,8 @@ h2 {
 #menu {
 	/*position/size*/
 	height: 110px;
-		padding-top: 25px;
+	padding-top: 25px;
+	/*margin-bottom: 150px;*/
 
 	/*visual*/
 	background-color: rgba(0, 0, 0, 0);
@@ -55,7 +63,7 @@ h2 {
 
 #menu a {
 	/*position/size*/
-    line-height: 60px;
+	line-height: 60px;
 
 	/*visual*/
 	color: white;
@@ -65,8 +73,12 @@ h2 {
 	text-decoration: none;
 
 	/*transition*/
-  	transition-duration: 0.3s;
-  	transition-property: letter-spacing;
+	transition-duration: 0.3s;
+	transition-property: letter-spacing;
+
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
 }
 
 #menu .left {
@@ -76,7 +88,7 @@ h2 {
 
 	/*visual*/
 	font-size: 200%;
-  	text-transform: uppercase;
+	text-transform: uppercase;
 }
 
 #menu .left:hover {
@@ -84,16 +96,16 @@ h2 {
 	letter-spacing: 5px;
 
 	/*transition*/
-  	transition-duration: 0.3s;
-  	transition-property: letter-spacing;
+	transition-duration: 0.3s;
+	transition-property: letter-spacing;
 }
 
 #menu .right {
 	/*position/size*/
 	width: 170px;
-		margin-top: 5px;
-		margin-left: 20px;
-    line-height: 44px;
+	margin-top: 5px;
+	margin-left: 20px;
+	line-height: 44px;
 	float: right;
 
 	/*visual*/
@@ -108,29 +120,29 @@ h2 {
 	border-width: 3px;
 
 	/*transition*/
-  	transition-duration: 0.3s;
-  	transition-property: background-color, letter-spacing;
+	transition-duration: 0.3s;
+	transition-property: background-color, letter-spacing;
 }
 
 #menu .right:hover {
 	/*visual*/
-  	background-color: rgba(96, 163, 188,1.0);
+	background-color: rgba(96, 163, 188,1.0);
 	letter-spacing: 4px;
 
 	/*transition*/
-  	transition-duration: 0.3s;
-  	transition-property: background-color, letter-spacing;
+	transition-duration: 0.3s;
+	transition-property: background-color, letter-spacing;
 }
 
 @media all and (max-width: 500px) {
 	#menu {
-	/*position/size*/
-	height: 170px;
+		/*position/size*/
+		height: 170px;
 	}
 
 	#menu .right, #menu .left{
-	/*position/size*/
-	width: 100%;
+		/*position/size*/
+		width: 100%;
 		margin-left: auto;
 		margin-right: auto;
 	}
@@ -149,9 +161,9 @@ h2 {
 #profil {
 	/*position/size*/
 	max-width: 400px;
-		padding: 20px;
-			margin-left: auto;
-			margin-right: auto;
+	padding: 20px;
+	margin-left: auto;
+	margin-right: auto;
 
 	/*visual*/
 	background-color: rgba(0, 0, 0,0.2);
@@ -162,10 +174,16 @@ h2 {
 	border-width: 5px;
 }
 
-span {
+#profil li {
+	/*visual*/
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+label {
 	/*position/size*/
 	width: 100%;
-    line-height: 60px;
+	line-height: 60px;
 
 	/*visual*/
 	background-color: rgba(0, 0, 0, 0);

@@ -1,21 +1,25 @@
 body {
 	/*visual*/
 	font-family: 'Open Sans', sans-serif;
-  	font-style: normal;
-  	font-size: 100%;
+	font-style: normal;
+	font-size: 100%;
+	line-height: 130%;
 
-  	background-image: url("../images/background.png");
-  	background-position: center;
+	background-image: url("../images/background.png");
+	background-position: center;
 	background-size: cover;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
 }
 
 h2 {
 	/*position/size*/
 	max-width: 600px;
-		margin-top: 50px;
-		margin-bottom: 35px;
-		margin-left: auto;
-		margin-right: auto;
+	margin-top: 50px;
+	margin-bottom: 35px;
+	margin-left: auto;
+	margin-right: auto;
+	line-height: 100%;
 	text-align: center;
 
 	/*visual*/
@@ -24,16 +28,19 @@ h2 {
 	font-weight: bold;
 	text-transform: uppercase;
 	letter-spacing: 5px;
+
+	overflow: hidden;
+	text-overflow: ellipsis;
 }
 
 .page {
 	/*position/size*/
 	min-height: 100vh;
 	max-width: 1000px;
-		padding-left: 10px;
-		padding-right: 10px;
-			margin-left: auto;
-			margin-right: auto;
+	padding-left: 10px;
+	padding-right: 10px;
+	margin-left: auto;
+	margin-right: auto;
 
 	/*visual*/
 	color: white;
@@ -47,8 +54,7 @@ h2 {
 #menu {
 	/*position/size*/
 	height: 110px;
-		padding-top: 25px;
-			/*margin-bottom: 150px;*/
+	padding-top: 25px;
 
 	/*visual*/
 	background-color: rgba(0, 0, 0, 0);
@@ -56,7 +62,7 @@ h2 {
 
 #menu a {
 	/*position/size*/
-    line-height: 60px;
+	line-height: 60px;
 
 	/*visual*/
 	color: white;
@@ -66,8 +72,12 @@ h2 {
 	text-decoration: none;
 
 	/*transition*/
-  	transition-duration: 0.3s;
-  	transition-property: letter-spacing;
+	transition-duration: 0.3s;
+	transition-property: letter-spacing;
+
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
 }
 
 #menu .left {
@@ -77,7 +87,7 @@ h2 {
 
 	/*visual*/
 	font-size: 200%;
-  	text-transform: uppercase;
+	text-transform: uppercase;
 }
 
 #menu .left:hover {
@@ -85,16 +95,16 @@ h2 {
 	letter-spacing: 5px;
 
 	/*transition*/
-  	transition-duration: 0.3s;
-  	transition-property: letter-spacing;
+	transition-duration: 0.3s;
+	transition-property: letter-spacing;
 }
 
 #menu .right {
 	/*position/size*/
 	width: 170px;
-		margin-top: 5px;
-		margin-left: 20px;
-    line-height: 44px;
+	margin-top: 5px;
+	margin-left: 20px;
+	line-height: 44px;
 	float: right;
 
 	/*visual*/
@@ -109,29 +119,29 @@ h2 {
 	border-width: 3px;
 
 	/*transition*/
-  	transition-duration: 0.3s;
-  	transition-property: background-color, letter-spacing;
+	transition-duration: 0.3s;
+	transition-property: background-color, letter-spacing;
 }
 
 #menu .right:hover {
 	/*visual*/
-  	background-color: rgba(96, 163, 188,1.0);
+	background-color: rgba(96, 163, 188,1.0);
 	letter-spacing: 4px;
 
 	/*transition*/
-  	transition-duration: 0.3s;
-  	transition-property: background-color, letter-spacing;
+	transition-duration: 0.3s;
+	transition-property: background-color, letter-spacing;
 }
 
 @media all and (max-width: 500px) {
 	#menu {
-	/*position/size*/
-	height: 170px;
+		/*position/size*/
+		height: 170px;
 	}
 
 	#menu .right, #menu .left{
-	/*position/size*/
-	width: 100%;
+		/*position/size*/
+		width: 100%;
 		margin-left: auto;
 		margin-right: auto;
 	}
@@ -145,9 +155,9 @@ h2 {
 	/*position/size*/
 	min-height: 15vh;
 	max-width: 600px;
-		margin-top: 50px;
-		margin-left: auto;
-		margin-right: auto;
+	margin-top: 50px;
+	margin-left: auto;
+	margin-right: auto;
 	text-align: center;
 }
 
@@ -157,23 +167,47 @@ h2 {
 
 #sec_discussion {
 	/*position/size*/
-	max-height: 45vh;
-		margin-bottom: 25px;
+	margin-bottom: 25px;
+	text-align: center;
 }
+
+#button_new_discussion {
+	/*position/size*/
+	font-size: 170%;
+
+	/*visual*/
+	font-variant: small-caps;
+}
+
+#sec_discussion a {
+	/*position/size*/
+
+	/*visual*/
+	color: rgba(230, 230, 230, 1.0);
+}
+
+#sec_discussion a:hover {
+	/*visual*/
+	color: white;
+}
+
 
 .bloc_discussion {
 	/*position/size*/
-	height: 20px;
-	max-width: 600px;
-		padding: 20px;
-			margin-bottom: 50px;
-			margin-left: auto;
-			margin-right: auto;
+	height: 100%;
+	max-width: 500px;
+	padding: 20px;
+	margin-top: 50px;
+	margin-left: auto;
+	margin-right: auto;
+	font-size: 120%;
 
 	/*visual*/
 	background-color: rgba(0, 0, 0,0.2);
+
 	overflow: hidden;
 	text-overflow: ellipsis;
+	white-space: nowrap;
 
 	border-style: solid;
 	border-color: rgba(60, 99, 130,1.0);
@@ -181,43 +215,25 @@ h2 {
 	border-width: 5px;
 }
 
-.bloc_discussion div {
-	/*position/size*/
-	float: left;
-}
-
-.bloc_title {
-	/*position/size*/
-	height: 100%;
-	width: 90%;
-
-	/*visual*/
-	font-size: 120%;
-}
-
-.bloc_state {
-	height: 100%;
-	width: 10%;
-}
-
-.dot {	
-	/*position/size*/
-	height: 25px;
-	width: 25px;
-		margin-top: auto;
-		margin-bottom: auto;
-		margin-left: auto;
-		margin-right: auto;
-	border-radius: 50%;
-
-	/*visual*/
-	background-color: green;
-}
-
-.button {	
+.bloc_button {
 	/*position/size*/
 	max-width: 500px;
-		margin-left: auto;
-		margin-right: auto;
-	text-align: center;
+	margin-top: 30px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.bloc_button form {
+	/*position/size*/
+	margin-top: 10px;
+}
+
+.bloc_button form input {
+	/*position/size*/
+	padding: 5px;
+}
+
+.bloc_button form input[type=number] {
+	/*position/size*/
+	width: 40px;
 }

@@ -31,19 +31,18 @@
         <h2>Mon profil</h2>
         <div id="profil">
             <ul>
-                <li><span>Identifiant : <?php echo $pseudo; ?></span></li>
-                <li><span>E-mail : <?php echo $email; ?></span></li>
-                <li><span>Modifier :
+                <li><label>Identifiant : <?php echo $pseudo; ?></label></li>
+                <li><label>E-mail : <?php echo $email; ?></label></li>
+                <li><label>Modifier :
                     <a href="../controller/changeMailController.php">E-mail</a>
                     /
                     <a href="../controller/reinitialiserMDPController.php">Mot de passe</a>
-                </span>
+                </label>
                 </li>
-                <li> <span>Rôle : <?php echo $role; ?></span></li>
+                <li> <label>Rôle : <?php echo $role; ?></label></li>
             </ul>
             <a href="../model/logout.php">Déconnexion</a>
         </div>
-
     </section>
 </div>
 </body>
