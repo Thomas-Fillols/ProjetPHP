@@ -62,11 +62,26 @@
         <div class="button">
             <?php
                 for($i=1;$i<=$pagesTotales;$i++) {
-                    if($i == $pageCourante) {
+                    /*if($i == $pageCourante) {
                         echo $i.' ';
                     } else { ?>
                        <a id="button_switch_nb_bloc" href="../controller/indexController.php?page=<?php echo $i; ?>"><?php echo $i; ?></a>
-                    <?php }
+                    <?php }*/
+
+                    if($i==1 || (($pageCourante-2)<$i && $i<($pageCourante+2)) || $i==$pagesTotales) {
+                        if($i==$pagesTotales && $pageCourante<($pagesTotales-2)) {
+                            echo '...';
+                        }
+                        if ($i == $pageCourante) {
+                            echo $i;
+                        }
+                        else { ?>
+                            <a id="button_switch_nb_bloc" href="../controller/indexController.php?page=<?php echo $i; ?>"><?php echo $i; ?></a>
+                        <?php }
+                        if($i==1 && $pageCourante>3) {
+                            echo '...';
+                        }
+                    }
                 }
             ?>
             <form action="../controller/indexController.php" method="post" <?php echo $adminConnecte; ?>>
