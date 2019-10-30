@@ -22,8 +22,8 @@ $adminConnecte = 'style="display: none;"';
 // Page d'affichage courante
 $pageCourante = 1;
 
-// Nombre d'élément afficher par pagination
-$discussionsParPage = 2;
+// Discussions par page par defaut
+//$discussionsParPage = 2;
 
 // Permet de se connecter à la base de données
 $dbLink = new PDO('mysql:host=mysql-freenote.alwaysdata.net;dbname=freenote_sql', 'freenote','zawarudo');
@@ -33,6 +33,3 @@ $discussionsTotalesReq = $dbLink->query('SELECT * FROM utilisateur');
 
 // Compte le nombre de ligne dans la base de données
 $discussionsTotales = $discussionsTotalesReq->rowCount();
-
-// Compte le nombre de pages totales
-$pagesTotales = ceil($discussionsTotales/$discussionsParPage);

@@ -69,7 +69,12 @@
                     <?php }
                 }
             ?>
-            <input type="number" <?php echo $adminConnecte; ?>>
+            <form action="../controller/indexController.php" method="post" <?php echo $adminConnecte; ?>>
+                <div id="form">
+                    <input type="number" name="nombre">
+                </div>
+                <input type="submit" name="action" value="Modifier">
+            </form>
         </div>
     </section>
 </div>
