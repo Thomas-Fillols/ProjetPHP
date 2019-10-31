@@ -1,12 +1,17 @@
 <?php
     session_start();
-
     if (isset($_SESSION['login'])){
         $estConnecte = 'style="display: none;"';
         $connect = $dbLink->query("SELECT role FROM utilisateur WHERE pseudo='$pseudo'");
         $testRole = $connect->fetch();
         if ($testRole['role'] == 1){
-            $adminConnecte = '';
+
+            $adminFormulairePagination = ("<form action=\"../controller/indexController.php\" method=\"post\">
+                <label>Nombre de discussion : </label>
+                <input type=\"number\" name=\"nombre\">
+                <input type=\"submit\" name=\"action\" value=\"Modifier\">
+            </form>");
+
             if (isset($_POST['nombre'])){
                 if (!is_numeric($_POST['nombre'])){
                     header('Location: ../controller/erreurController.php?erreur=NO_NUMERIC');

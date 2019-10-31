@@ -56,12 +56,6 @@
         <div class="bloc_button">
             <?php
                 for($i=1;$i<=$pagesTotales;$i++) {
-                    /*if($i == $pageCourante) {
-                        echo $i.' ';
-                    } else { ?>
-                       <a id="button_switch_nb_bloc" href="../controller/indexController.php?page=<?php echo $i; ?>"><?php echo $i; ?></a>
-                    <?php }*/
-
                     if($i==1 || (($pageCourante-2)<$i && $i<($pageCourante+2)) || $i==$pagesTotales) {
                         if($i==$pagesTotales && $pageCourante<($pagesTotales-2)) {
                             echo '...';
@@ -77,12 +71,7 @@
                         }
                     }
                 }
-            ?>
-            <form action="../controller/indexController.php" method="post" <?php echo $adminConnecte; ?>>
-                <label>Nombre de discussion : </label>
-                <input type="number" name="nombre">
-                <input type="submit" name="action" value="Modifier">
-            </form>
+                echo $adminFormulairePagination; ?>
         </div>
     </section>
 </div>

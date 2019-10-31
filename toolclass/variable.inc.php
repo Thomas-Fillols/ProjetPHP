@@ -16,14 +16,14 @@ $subject = 'Réinitialisation de mot de passe';
 $estConnecte = '';
 $nonConnecte = '';
 
-// Sert a afficher ou non l'input de modification de pagination selon si c'est un admin qui est connecté ou non
-$adminConnecte = 'style="display: none;"';
-
 // Page d'affichage courante
 $pageCourante = 1;
 
 // Discussions par page par defaut
 //$discussionsParPage = 2;
+
+// Permet d'afficher le formulaire ou non en fonction de l'utilisateur connecté(admin ou non)
+$adminFormulairePagination = '';
 
 // Permet de se connecter à la base de données
 $dbLink = new PDO('mysql:host=mysql-freenote.alwaysdata.net;dbname=freenote_sql', 'freenote','zawarudo');
