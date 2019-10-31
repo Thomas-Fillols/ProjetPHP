@@ -66,9 +66,9 @@
                     $query.='"'.$role.'")';
 
                     $dbRowReq = $dbLink->prepare($query);
-                    //$dbRowReq->fetch();
+                    $dbRowReq->fetch();
 
-                    //header("Location: ../controller/erreurController.php?erreur=VALIDATION_INSCRIPTION");
+                    header("Location: ../controller/erreurController.php?erreur=VALIDATION_INSCRIPTION");
                 }else{
                     header('Location: ../controller/erreurController.php?erreur=CONDITION_UTILISATION');
                 }
