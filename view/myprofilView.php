@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="utf-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -39,9 +39,9 @@
                     <a href="../controller/reinitialiserMDPController.php">Mot de passe</a>
                 </label>
                 </li>
-                <li> <label>Rôle : <?php echo $role; ?></label></li>
+                <li><label>Rôle : <?php echo $role; ?></label></li>
+                <?php echo $modifUtilisateur; ?>
             </ul>
-            <a href="../model/logout.php">Déconnexion</a>
         </div>
     </section>
 </div>

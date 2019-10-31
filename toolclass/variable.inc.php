@@ -25,6 +25,9 @@ $pageCourante = 1;
 // Permet d'afficher le formulaire ou non en fonction de l'utilisateur connecté(admin ou non)
 $adminFormulairePagination = '';
 
+// Permet d'afficher le formulaire permettant de modifier les differents paramètres d'un utilisateur
+$modifUtilisateur = '';
+
 // Permet de se connecter à la base de données
 $dbLink = new PDO('mysql:host=mysql-freenote.alwaysdata.net;dbname=freenote_sql', 'freenote','zawarudo');
 
