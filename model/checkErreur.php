@@ -28,8 +28,14 @@
             case 'ERROR_ISSET':
                 $messageErreur = 'Désolé, il y a eu une erreur dans votre connexion. Veuillez vous reconnecter !';
                 break;
+            case 'USER_VALIDATION_ERROR':
+                $messageErreur = 'Vous devez rentrer un identifiant valide.';
+                break;
             case 'MAIL_VALIDATION_ERROR':
                 $messageErreur = 'Vous n\'avez pas rentré un email valide. Veuillez recommencer s\'il vous plaît.';
+                break;
+            case 'MDP_VALIDATION_ERROR':
+                $messageErreur = 'Vous devez rentrer un mot de passe valide.';
                 break;
             case 'NO_NUMERIC':
                 $messageErreur = 'Vous devez rentrer une valeur une numerique';

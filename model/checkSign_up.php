@@ -3,18 +3,27 @@
     require '../toolclass/variable.inc.php';
 
     if(isset($_POST['identifiant'])) {
-        $utilisateur = $_POST['identifiant'];
+        if(preg_match("#^[a-zA-Z0-9_]{3,20}$#",$_POST['identifiant'])){
+            $utilisateur = $_POST['identifiant'];
+            var_dump($utilisateur);
+        }else{
+            header('Location: ../controller/erreurController.php?erreur=USER_VALIDATION_ERROR');
+        }
     }else{
         header('Location: ../controller/erreurController.php?erreur=ERROR_ISSET');
     }
 
     if(isset($_POST['mdp'])){
-        $mdp = $_POST['mdp'];
+        if(preg_match("#^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9]).{8,40}$#",$_POST['mdp'])){
+            $mdp = $_POST['mdp'];
+        }else{
+            header('Location: ../controller/erreurController.php?erreur=MDP_VALIDATION_ERROR');
+        }
     }else{
         header('Location: ../controller/erreurController.php?erreur=ERROR_ISSET');
     }
 
-    if (preg_match("#^[a-z0-9._-]+@[a-z0-9._-]{2,}\.[a-z]{2,4}$#", $_POST['email'])){
+    if(preg_match("#^[a-z0-9._-]+@[a-z0-9._-]{2,}\.[a-z]{2,4}$#", $_POST['email'])){
         if(isset($_POST['email'])){
             $email = $_POST['email'];
         }else{
@@ -25,7 +34,11 @@
     }
 
     if(isset($_POST['mdpverif'])){
-        $mdpverif = $_POST['mdpverif'];
+        if(preg_match("#^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9]).{8,40}$#",$_POST['mdpverif'])){
+            $mdpverif = $_POST['mdpverif'];
+        }else{
+            header('Location: ../controller/erreurController.php?erreur=MDP_VALIDATION_ERROR');
+        }
     }else{
         header('Location: ../controller/erreurController.php?erreur=ERROR_ISSET');
     }
@@ -53,9 +66,9 @@
                     $query.='"'.$role.'")';
 
                     $dbRowReq = $dbLink->prepare($query);
-                    $dbRowReq->fetch();
+                    //$dbRowReq->fetch();
 
-                    header("Location: ../controller/erreurController.php?erreur=VALIDATION_INSCRIPTION");
+                    //header("Location: ../controller/erreurController.php?erreur=VALIDATION_INSCRIPTION");
                 }else{
                     header('Location: ../controller/erreurController.php?erreur=CONDITION_UTILISATION');
                 }
