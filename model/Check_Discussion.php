@@ -5,6 +5,15 @@ require "../include/function.inc.php";
 $CloseD = $_POST['CloseDisc'];
 $NomD = $_POST['NomDiscu'];
 
+try
+{
+    $dbLink = new PDO('mysql:host=mysql-freenote.alwaysdata.net;dbname=freenote_sql', 'freenote','zawarudo');
+}
+catch(Exception $e)
+{
+    die('Erreur : '.$e->getMessage());
+}
+
 function CloseDiscussion () {
     $query="SELECT NomDiscussion FROM Discussion WHERE NomDiscussion=NomDiscussion";
     $dbLink=call_data_base();
@@ -24,11 +33,13 @@ function CloseDiscussion () {
         echo '<br/><strong>Bouton non géré !</strong>';
 
 }
+
+$query = "SELECT Distinct NomDiscussion FROM Discussion WHERE NomDiscussion='$NomD'";
+$dbRowReq = $dbLink->query($query);
+$dbRow = $dbRowReq->fetch();
+
 //Si le bouton NameDiscu correspond bien
 if ($_POST['BNameD'] == 'Ouvrir discussion') {
-    $query = "SELECT Distinct NomDiscussion FROM Discussion";
-    $dbRowReq = $dbLink->prepare($query);
-    $dbRox = $dbRowReq->fetch();
     if ($dbRow['NomDiscussion'] == NULL) {
         //On crée une nouvelle discussion
         $dbLink = call_data_base();
@@ -46,4 +57,14 @@ if ($_POST['BNameD'] == 'Ouvrir discussion') {
               <ul>
               </ul></body>' . PHP_EOL;
     }
+    else
+        echo '<!DOCTYPE html> 
+              <html lang="fr">
+              <head>
+              <title>Nom invalide</title>
+              </head>
+              <body>
+              <header> Le nom est déjà utilisé </header>
+              <ul>
+              </ul></body>' . PHP_EOL;
 }
