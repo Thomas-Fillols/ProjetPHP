@@ -49,12 +49,11 @@
         header('Location: ../controller/erreurController.php?erreur=ERROR_ISSET');
     }
 
-    $query = "SELECT pseudo FROM utilisateur WHERE pseudo ='$utilisateur'";
-    $dbRowReq = $dbLink->prepare($query);
+    $dbRowReq = $dbLink->query("SELECT pseudo FROM utilisateur WHERE pseudo ='$utilisateur'");
     $dbRox = $dbRowReq->fetch();
 
     if ($dbRow['pseudo'] == NULL){
-        $dbRowReq = $dbLink->prepare("SELECT email FROM utilisateur WHERE email ='$email'");
+        $dbRowReq = $dbLink->query("SELECT email FROM utilisateur WHERE email ='$email'");
         $dbRox = $dbRowReq->fetch();
         if ($dbRow['email'] == NULL){
             if($mdp == $mdpverif){
