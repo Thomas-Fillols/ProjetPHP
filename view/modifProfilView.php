@@ -28,7 +28,7 @@
     </header>
 
     <section id="sec_profil">
-        <h2>Mon profil</h2>
+        <h2>Modification utilisateur</h2>
         <form action="../model/checkModifProfil.php" method="post">
             <div id="form">
                 <input type="text" name="identifiant" placeholder="Identifiant" required title="Veuillez rentrer le nom de l'utilisateur à modifier"/>
