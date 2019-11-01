@@ -5,7 +5,6 @@
     if(isset($_POST['identifiant'])) {
         if(preg_match("#^[a-zA-Z0-9_]{3,20}$#",$_POST['identifiant'])){
             $utilisateur = $_POST['identifiant'];
-            var_dump($utilisateur);
         }else{
             header('Location: ../controller/erreurController.php?erreur=USER_VALIDATION_ERROR');
         }

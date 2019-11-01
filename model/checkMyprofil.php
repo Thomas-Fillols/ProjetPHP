@@ -8,7 +8,7 @@
             $role = 'Membre';
         }else if($dbRow['role'] == 1){
             $role = 'Super-administrateur';
-            $modifUtilisateur = "<li><label>Action admin : <a href=\"#\">Modifier un utilisateur</a></label></li>";
+            $modifUtilisateur = "<li><label>Action admin : <a href=\"../controller/modifProfilController.php\">Modifier un utilisateur</a></label></li>";
         }else {
             $dbRowReq = $dbLink->query("UPDATE utilisateur SET role=0 WHERE pseudo = '$pseudo'");
             $dbRowReq->fetch();
