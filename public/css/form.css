@@ -134,6 +134,11 @@ h2 {
 }
 
 @media all and (max-width: 500px) {
+	h2 {
+		/*position/size*/
+		font-size: 160%;
+	}
+
 	#menu {
 		/*position/size*/
 		height: 170px;
@@ -207,6 +212,7 @@ input[type=text], input[type=password] {
 
 	border: none;
 	outline: none;
+	cursor: default;
 }
 
 input[type=checkbox] {
@@ -219,6 +225,7 @@ input[type=checkbox] {
 
 	/*visual*/
 	outline: none;
+	cursor: default;
 }
 
 #form a {
@@ -235,6 +242,26 @@ input[type=checkbox] {
 #form a:hover {
 	/*visual*/
 	color: white;
+}
+
+select {
+	/*position/size*/
+	max-width: 100%;
+	padding: 10px;
+	margin-top: 10px;
+
+	/*visual*/
+	background-color: rgba(0, 0, 0, 0);
+	color: rgba(200, 200, 200, 1.0);
+	outline: none;
+
+	font-size: 110%;
+	font-weight: bold;
+	letter-spacing: 1px;
+
+	border-width: 3px;
+	border-radius: 10px;
+	cursor: pointer;
 }
 
 input[type=submit] {
@@ -257,6 +284,7 @@ input[type=submit] {
 
 	overflow: hidden;
 	text-overflow: ellipsis;
+	cursor: pointer;
 
 	/*transition*/
 	transition-duration: 0.3s;

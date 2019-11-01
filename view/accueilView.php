@@ -40,7 +40,6 @@
         </div>
     </section>
 
-
     <section id="sec_discussion">
         <h2>discussions</h2>
         <a id="button_new_discussion" href="#">nouvelle discussion</a>
