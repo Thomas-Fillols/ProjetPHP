@@ -1,5 +1,4 @@
 <?php
-    require '../toolclass/function.inc.php';
     require '../toolclass/variable.inc.php';
 
     if(isset($_POST['identifiant'])){

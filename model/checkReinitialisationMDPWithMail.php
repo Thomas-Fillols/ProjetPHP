@@ -1,11 +1,10 @@
 <?php
-    require '../toolclass/function.inc.php';
     require '../toolclass/variable.inc.php';
 
     if(isset($_POST['email'])) {
         $email = $_POST['email'];
 
-        $dbRowReq = $dbLink->prepare("SELECT email FROM utilisateur WHERE email = '$email'");
+        $dbRowReq = $dbLink->query("SELECT email FROM utilisateur WHERE email = '$email'");
         $dbRow = $dbRowReq->fetch();
 
         if ($dbRow['email'] == $email) {
@@ -13,7 +12,7 @@
             $nouveauMdp = rand(100000,999999);
             $nouveauMdpencode = md5($nouveauMdp);
 
-            $dbRowReq = $dbLink->prepare("UPDATE utilisateur SET utilisateur.password ='$nouveauMdpencode' WHERE email = '$email'");
+            $dbRowReq = $dbLink->query("UPDATE utilisateur SET utilisateur.password ='$nouveauMdpencode' WHERE email = '$email'");
             $dbRowReq->fetch();
 
             $message = 'Veuillez rentrez votre nouveau mot de passe : ' . $nouveauMdp . PHP_EOL;

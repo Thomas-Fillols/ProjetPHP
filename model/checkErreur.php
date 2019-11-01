@@ -19,6 +19,9 @@
             case 'NAME_EXIST':
                 $messageErreur = 'Le nom existe déjà.';
                 break;
+            case 'NAME_NOT_EXIST':
+                $messageErreur = 'Le nom n\'existe pas. Veuillez réessayer.';
+                break;
             case 'VERIF_MDP_FAUX':
                 $messageErreur = 'La verification de mot de passe à échoué.';
                 break;
@@ -37,8 +40,15 @@
             case 'MDP_VALIDATION_ERROR':
                 $messageErreur = 'Vous devez rentrer un mot de passe valide.';
                 break;
+            case 'ROLE_VALIDATION_ERROR':
+                $messageErreur = 'Le role n\'est pas bien sélectionné';
+                break;
             case 'NO_NUMERIC':
                 $messageErreur = 'Vous devez rentrer une valeur une numerique';
+                break;
+            case 'VALIDATION_MODIF':
+                $messageErreur = 'Modification réussi';
+                $messageTitre = 'Modification réussi';
                 break;
             case 'NOUVEAU_MDP':
                 $messageErreur = 'Votre changement de mot de passe a bien été validé. Allez verifier votre e-mail.';

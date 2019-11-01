@@ -10,7 +10,7 @@
     <link rel="icon" type="image/x-icon" href="../public/images/favicon.ico">
 
     <link rel="stylesheet"  type="text/css"   href="../public/css/reset.css">
-    <link id="pagestyle"  rel="stylesheet"  type="text/css" href="../public/css/profil.css">
+    <link id="pagestyle"  rel="stylesheet"  type="text/css" href="../public/css/form.css">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
 </head>
 
@@ -34,7 +34,7 @@
                 <input type="text" name="identifiant" placeholder="Identifiant" required title="Veuillez rentrer le nom de l'utilisateur à modifier"/>
                 <input type="text" name="email" placeholder="email@domain.com">
                 <select name="role">
-                    <option value="O">Membre</option>
+                    <option value="0">Membre</option>
                     <option value="1">Super-administrateur</option>
                 </select>
             </div>

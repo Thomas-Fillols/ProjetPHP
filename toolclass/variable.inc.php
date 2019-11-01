@@ -16,6 +16,8 @@ $subject = 'Réinitialisation de mot de passe';
 $estConnecte = '';
 $nonConnecte = '';
 
+$mailOK = false;
+
 // Page d'affichage courante
 $pageCourante = 1;
 
