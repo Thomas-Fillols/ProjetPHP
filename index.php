@@ -1,16 +1,9 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-<ul>
-    <li><a href="view/Open_Discussion.php">Open_Discussion</a></li>
-    <li><a href="view/Message.php">Discussion</a></li>
-    <li><a href="identification/login.php">Login</a></li>
-    <li><a href="identification/sign_up.php">Sign_up</a></li>
-</ul>
+<?php
+    try{
+        header("Location:controller/indexController.php");
 
-</body>
-</html>
+    }catch(Exception $e){
+
+        die ('Erreur : '.$e->getMessage());
+
+    }
