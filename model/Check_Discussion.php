@@ -1,6 +1,7 @@
 <?php
 
-require "../include/function.inc.php";
+require "../toolclass/function.inc.php";
+require "../toolclass/variable.inc.php";
 
 $CloseD = $_POST['CloseDisc'];
 $NomD = $_POST['NomDiscu'];
