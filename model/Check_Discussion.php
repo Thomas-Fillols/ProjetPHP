@@ -14,26 +14,6 @@ catch(Exception $e)
     die('Erreur : '.$e->getMessage());
 }
 
-function CloseDiscussion () {
-    $query="SELECT NomDiscussion FROM Discussion WHERE NomDiscussion=NomDiscussion";
-    $dbLink=call_data_base();
-    $dbRow=mysqli_fetch_assoc(access_bd($dbLink,$query));
-    echo '<!DOCTYPE html> 
-              <html lang="fr">
-              <head>
-              <title>Discussion fermée</title>
-              </head>
-              <body>
-              <header> La discussion a bien été fermée </header>
-              <ul>
-              </ul></body>' . PHP_EOL;
-    $query = 'INSERT INTO Discussion(FullMessage)VALUES(';
-    $query .= '"' . 'Fin' . '")';
-    if ($Close = !$_POST['Close discussion'])
-        echo '<br/><strong>Bouton non géré !</strong>';
-
-}
-
 $query = "SELECT Distinct NomDiscussion FROM Discussion WHERE NomDiscussion='$NomD'";
 $dbRowReq = $dbLink->query($query);
 $dbRow = $dbRowReq->fetch();
