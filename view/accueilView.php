@@ -40,37 +40,38 @@
         </div>
     </section>
 
+
     <section id="sec_discussion">
         <h2>discussions</h2>
-        <a id="button_new_discussion" href="#">nouvelle discussion</a>
+        <a id="button_new_discussion" href="../controller/DiscussionController.php">nouvelle discussion</a>
         <?php
-            while($element = $discussions->fetch()) { ?>
-                <div class="bloc_discussion">
-                    <a href="#"><?php echo $element['pseudo']; ?></a>
-                </div>
+        while($donnes = $dis->fetch()) { ?>
+            <div class="bloc_discussion">
+                <a href=../controller/MessageController.php?Id_Discussion=<?php echo $donnees['Id_Discussion']; ?></a>
+            </div>
             <?php
-            }
+        }
         ?>
 
         <div class="bloc_button">
             <?php
-                for($i=1;$i<=$pagesTotales;$i++) {
-                    if($i==1 || (($pageCourante-2)<$i && $i<($pageCourante+2)) || $i==$pagesTotales) {
-                        if($i==$pagesTotales && $pageCourante<($pagesTotales-2)) {
-                            echo '...';
-                        }
-                        if ($i == $pageCourante) {
-                            echo $i;
-                        }
-                        else { ?>
-                            <a class="button_switch_nb_bloc" href="../controller/indexController.php?page=<?php echo $i; ?>"><?php echo $i; ?></a>
-                        <?php }
-                        if($i==1 && $pageCourante>3) {
-                            echo '...';
-                        }
+            for($i=1;$i<=$pagesTotales;$i++) {
+                if($i==1 || (($pageCourante-2)<$i && $i<($pageCourante+2)) || $i==$pagesTotales) {
+                    if($i==$pagesTotales && $pageCourante<($pagesTotales-2)) {
+                        echo '...';
+                    }
+                    if ($i == $pageCourante) {
+                        echo $i;
+                    }
+                    else { ?>
+                        <a class="button_switch_nb_bloc" href="../controller/indexController.php?page=<?php echo $i; ?>"><?php echo $i; ?></a>
+                    <?php }
+                    if($i==1 && $pageCourante>3) {
+                        echo '...';
                     }
                 }
-                echo $adminFormulairePagination; ?>
+            }
+            echo $adminFormulairePagination; ?>
         </div>
     </section>
 </div>
