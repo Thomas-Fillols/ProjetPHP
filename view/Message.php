@@ -7,25 +7,33 @@
 <div >
     <h3>
         <strong> Discussion :</strong>
-        <?php echo htmlspecialchars($Ddis['NomDiscussion']); ?>
+        <?php
+        echo htmlspecialchars($Ddis['NomDiscussion']); ?>
     </h3>
 
     <p>
         <?php
-        echo nl2br(htmlspecialchars($DFMess['FullMessage']));
+        foreach ($DFMess as $row => $values) {
+            echo nl2br(htmlspecialchars($values['FullMessage']));?><br>
+        <?php }
         ?>
     </p>
     <p>
         Message en cours: <br>
         <?php
-        echo nl2br(htmlspecialchars($DMessInPr['Message']));
+        foreach ($DMessInPr as $row => $values) {
+            echo nl2br(htmlspecialchars($values["Message"]));
+            echo ' ';
+        }
         ?>
     </p>
 </div>
-<form action="../model/Check_message.php" method="post">
+<form action="../model/Check_message.php?Id_Discussion=<?php echo $IdDiscussion; ?>" method="post">
     <label for="Participation"> Écrivez les mots souhaités (2 Maximum) : </label><br>
     <input type="Text" name="Participation" id="message" placeholder="Écrivez votre message">
-    <input type="Submit" name="BPart" id="BParticipation" value="Send Participation"><br>
+    <input type="Submit" name="BPart" id="BParticipation" value="Send Participation""><br>
     <input id="CloseD" type="submit" name="CloseDisc" value="fermer discussion">
+
+</form>
 </body>
 </html>

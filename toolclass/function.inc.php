@@ -28,3 +28,20 @@ function verif_connect_user($erreur){
     }
 }
 
+function CloseDisc($dbLink){
+    if (isset($_POST['CloseDisc'])) {
+        $CloQuery = $dbLink->prepare("UPDATE Discussion Set Closed='1' WHERE Id_Discussion='$IdDiscussion'");
+        echo '<!DOCTYPE html>
+              <html lang="fr">
+             <head>
+             <title>Discussion fermée</title>
+             </head>
+             <body>
+             <header> La discussion a bien été fermée </header><ul>
+             </ul></body>' . PHP_EOL;
+        $CloQuery = 'INSERT INTO FullMessage(FullMessage, Id_Discussion)VALUES(';
+        $dbLink->prepare($CloQuery)->execute(['Finito!', $IdDiscussion]);
+    }
+}
+
+

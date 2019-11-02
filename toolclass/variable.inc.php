@@ -13,7 +13,6 @@ $role = 0;
 $subject = 'Réinitialisation de mot de passe';
 
 
-
 //Récupération de l'ID de la discussion
 $IdDiscussion = $_GET['Id_Discussion'];
 
@@ -26,8 +25,7 @@ $NbMessageDiscussion = "SELECT COUNT FullMessage FROM FullMessage WHERE Id_Discu
 //Récupération de la dernière valeur de la table discussion
 $LastWord = "SELECT LAST FullMessage FROM Discussion";
 
-//Récupération du message entier
-$FMess = "SELECT Message FROM Message WHERE Id_Discussion='$IdDiscussion'";
+
 
 
 //Récupération des variables de POST
