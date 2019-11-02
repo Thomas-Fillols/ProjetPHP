@@ -1,5 +1,5 @@
 <?php
-include "variable.inc.php";
+include "../toolclass/variable.inc.php";
 
 function call_data_base(){
     $dbLink=mysqli_connect('mysql-freenote.alwaysdata.net', 'freenote','zawarudo')
@@ -28,9 +28,11 @@ function verif_connect_user($erreur){
     }
 }
 
-function CloseDisc($dbLink){
+function CloseDisc($IdDiscussion){
     if (isset($_POST['CloseDisc'])) {
-        $CloQuery = $dbLink->prepare("UPDATE Discussion Set Closed='1' WHERE Id_Discussion='$IdDiscussion'");
+        $dbLink = call_data_base();
+        $CloQuery = "UPDATE Discussion Set Closed='1' WHERE Id_Discussion='$IdDiscussion'";
+        access_bd($dbLink, $CloQuery);
         echo '<!DOCTYPE html>
               <html lang="fr">
              <head>
@@ -39,8 +41,10 @@ function CloseDisc($dbLink){
              <body>
              <header> La discussion a bien été fermée </header><ul>
              </ul></body>' . PHP_EOL;
-        $CloQuery = 'INSERT INTO FullMessage(FullMessage, Id_Discussion)VALUES(';
-        $dbLink->prepare($CloQuery)->execute(['Finito!', $IdDiscussion]);
+        $CloQuery  = 'INSERT INTO FullMessage(FullMessage, Id_Discussion)VALUES(';
+        $CloQuery .= '"' . 'Finito!' . '",';
+        $CloQuery .= '"' . $IdDiscussion . '")';
+        access_bd($dbLink, $CloQuery);
     }
 }
 
