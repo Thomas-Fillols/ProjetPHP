@@ -14,8 +14,8 @@ $subject = 'Réinitialisation de mot de passe';
 
 // Permet de se connecter à la base de données
 $dbLink = new PDO('mysql:host=mysql-freenote.alwaysdata.net;dbname=freenote_sql', 'freenote','zawarudo');
-//Récupération de l'ID de la discussion
 
+//Récupération de l'ID de la discussion
 $IdDiscussion = $_GET['Id_Discussion'];
 
 //Récupération de la participation dans un message en fonction du Login
@@ -26,17 +26,6 @@ $NbMessageDiscussion = "SELECT COUNT FullMessage FROM FullMessage WHERE Id_Discu
 
 //Récupération de la dernière valeur de la table discussion
 $LastWord = "SELECT LAST FullMessage FROM Discussion";
-
-
-//Récupération des variables de POST
-$Participation = $_POST['Participation'];
-$CloseDisc = $_POST['CloseDisc'];
-$NomD = $_POST['NomDiscussion'];
-$SubmitPart = $_POST['BPart'];
-
-//Vérification qu'il y a bien deux mots au plus
-$NbMots = explode(" ", $Participation);
-
 
 
 // Pour afficher ou non les boutons de connexion, inscription, mon profil et deconnexion

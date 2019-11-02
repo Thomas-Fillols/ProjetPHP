@@ -26,7 +26,3 @@ function verif_connect_user($erreur){
         header('Location: ../view/erreur.php?erreur='.$erreur);
     }
 }
-
-function CloseDisc($IdDiscussion){
-
-}
