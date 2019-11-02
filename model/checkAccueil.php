@@ -30,7 +30,7 @@
         $nonConnecte = 'style="display: none;"';
     }
 
-    // Récupération d nombre d'élément à afficher par pagination
+    // Récupération du nombre d'élément à afficher par pagination
     $discussionsParPageReq = $dbLink->query('SELECT pagination FROM Pagination');
     $discussionsParPageI = $discussionsParPageReq->fetch();
     $discussionsParPage = $discussionsParPageI['pagination'];
@@ -46,6 +46,6 @@
     }
 
     $depart = ($pageCourante-1)*$discussionsParPage;
-    $discussions = $dbLink->query('SELECT pseudo,email FROM utilisateur LIMIT '.$depart.','.$discussionsParPage);
+    $discussions = $dbLink->query('SELECT NomDiscussion,Id_Discussion FROM Discussion LIMIT '.$depart.','.$discussionsParPage);
 
 ?>

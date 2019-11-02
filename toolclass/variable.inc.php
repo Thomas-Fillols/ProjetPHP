@@ -12,8 +12,10 @@ $role = 0;
 // Sujet du mail pour la reinitialisation du mot de passe
 $subject = 'Réinitialisation de mot de passe';
 
-
+// Permet de se connecter à la base de données
+$dbLink = new PDO('mysql:host=mysql-freenote.alwaysdata.net;dbname=freenote_sql', 'freenote','zawarudo');
 //Récupération de l'ID de la discussion
+
 $IdDiscussion = $_GET['Id_Discussion'];
 
 //Récupération de la participation dans un message en fonction du Login
@@ -24,8 +26,6 @@ $NbMessageDiscussion = "SELECT COUNT FullMessage FROM FullMessage WHERE Id_Discu
 
 //Récupération de la dernière valeur de la table discussion
 $LastWord = "SELECT LAST FullMessage FROM Discussion";
-
-
 
 
 //Récupération des variables de POST
@@ -57,11 +57,8 @@ $adminFormulairePagination = '';
 // Permet d'afficher le formulaire permettant de modifier les differents paramètres d'un utilisateur
 $modifUtilisateur = '';
 
-// Permet de se connecter à la base de données
-$dbLink = new PDO('mysql:host=mysql-freenote.alwaysdata.net;dbname=freenote_sql', 'freenote','zawarudo');
-
 // Variables qui recupère toutes les données de la base utilisateur
-$discussionsTotalesReq = $dbLink->query('SELECT * FROM utilisateur');
+$discussionsTotalesReq = $dbLink->query('SELECT * FROM Discussion');
 
 // Compte le nombre de ligne dans la base de données
 $discussionsTotales = $discussionsTotalesReq->rowCount();
