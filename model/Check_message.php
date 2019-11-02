@@ -1,19 +1,13 @@
 <?php
-require "../toolclass/function.inc.php";
+require '../toolclass/variable.inc.php';
 
-// Connexion à la base de données
-try
-{
-    $dbLink = new PDO('mysql:host=mysql-freenote.alwaysdata.net;dbname=freenote_sql', 'freenote','zawarudo');
-}
-catch(Exception $e)
-{
-    die('Erreur : '.$e->getMessage());
-}
 //Récupération de l'Id de la discussion
 $IdDisc = $_GET['Id_Discussion'];
 
-
+//Récupération de l'état de la discussion
+$clos = $dbLink->prepare('SELECT Closed FROM Discussion WHERE Id_Discussion = ?');
+$clos->execute(array($IdDiscussion));
+$DClos = $clos->fetch();
 
 // Récupération de la Discussion
 $dis = $dbLink->prepare('SELECT NomDiscussion, Id_Discussion FROM Discussion WHERE Id_Discussion = ?');
@@ -30,8 +24,8 @@ $MessInPr = $dbLink->prepare('SELECT Message FROM Message WHERE Id_Discussion = 
 $MessInPr->execute(array($IdDiscussion));
 $DMessInPr = $MessInPr->fetchAll();
 
-
-$dis->closeCursor(); //ibère le curseur pour la prochaine requête
+$clos->closeCursor();
+$dis->closeCursor(); //Libère le curseur pour la prochaine requête
 $FMess->closeCursor();
 $MessInPr->closeCursor();
 
@@ -48,19 +42,10 @@ while ($donnees = $req->fetch())
 } // Fin de la boucle des commentaires
 $req->closeCursor();
 
-
-
-
-
 //Envoies de la participation dans le message participatif
 if (isset($_POST['BPart'])) {
 
-    //Si l'utilisateur est connecté
-//    if ($_SESSION['login'] == 'true') {
-
-
     //Message participatif: bloquage
-    $pseudo = 'Micka';
     $dbLink = call_data_base();
     $block  = "SELECT '$pseudo' FROM Message WHERE Id_Discussion='$IdDiscussion'";
     access_bd($dbLink, $block);
@@ -97,7 +82,6 @@ if (isset($_POST['BPart'])) {
         $dbLink = call_data_base();
         $FMess = "SELECT Message FROM Message WHERE Id_Discussion='$IdDiscussion'";
         $FullMessage = access_bd($dbLink,$FMess);
-        var_dump($FullMessage);
         $inser = 'INSERT INTO FullMessage(FullMessage, Id_Discussion)VALUES(';
         $inser.='"'.$FullMessage.$Participation.'",';
         $inser.='"'.$IdDiscussion.'")';
@@ -108,29 +92,33 @@ if (isset($_POST['BPart'])) {
         echo 'La Discussion a été fermée';
     }
 
-    //    Ajout du message dans le message en cours
+    //Ajout du message dans le message en cours
     $dbLink = call_data_base();
     $query = 'INSERT INTO Message(Message, Id_Discussion, Pseudo)VALUES(';
     $query.='"'.$Participation.'",';
     $query.='"'.$IdDisc.'",';
     $query.='"'.$pseudo.'")';
     access_bd($dbLink, $query);
-    //Affiche "la réponse a bien été envoyée"
-    echo '<!DOCTYPE html> 
-              <html lang="fr">
-              <head>
-              <title>Message envoyé</title>
-              </head>
-              <body>
-              <header> Votre participation a bien été enregistrée. </header>
-              <ul>
-              </ul></body>' . PHP_EOL;
 
-    //}
+    header("Location: ../controller/erreurController.php?erreur=VALIDATION_INSERT_MESSAGE");
 }
 
-if (isset($_POST['CloseDisc']))
-    //Si le bouton d'arrêt de discussion est utilisé
-    CloseDisc($dbLink);
-
-
+if (isset($_POST['CloseDisc'])) {
+    if (isset($_POST['CloseDisc'])) {
+        $dbLink = call_data_base();
+        $CloQuery = "UPDATE Discussion Set Closed='1' WHERE Id_Discussion='$IdDiscussion'";
+        access_bd($dbLink, $CloQuery);
+        echo '<!DOCTYPE html>
+              <html lang="fr">
+             <head>
+             <title>Discussion fermée</title>
+             </head>
+             <body>
+             <header> La discussion a bien été fermée </header><ul>
+             </ul></body>' . PHP_EOL;
+        $CloQuery = 'INSERT INTO FullMessage(FullMessage, Id_Discussion)VALUES(';
+        $CloQuery .= '"' . 'Finito!' . '",';
+        $CloQuery .= '"' . $IdDiscussion . '")';
+        access_bd($dbLink, $CloQuery);
+    }
+}

@@ -15,25 +15,28 @@
         <?php
         foreach ($DFMess as $row => $values) {
             echo nl2br(htmlspecialchars($values['FullMessage']));?><br>
-        <?php }
-        ?>
+        <?php } ?>
     </p>
-    <p>
-        Message en cours: <br>
-        <?php
-        foreach ($DMessInPr as $row => $values) {
-            echo nl2br(htmlspecialchars($values["Message"]));
-            echo ' ';
-        }
-        ?>
-    </p>
+
 </div>
 <form action="../model/Check_message.php?Id_Discussion=<?php echo $IdDiscussion; ?>" method="post">
-    <label for="Participation"> Écrivez les mots souhaités (2 Maximum) : </label><br>
-    <input type="Text" name="Participation" id="message" placeholder="Écrivez votre message">
-    <input type="Submit" name="BPart" id="BParticipation" value="Send Participation""><br>
-    <input id="CloseD" type="submit" name="CloseDisc" value="fermer discussion">
-
+    <?php
+        if ($_SESSION['login']){
+            echo 'Message en cours: ';
+            foreach ($DMessInPr as $row => $values) {
+                echo nl2br(htmlspecialchars($values["Message"]));
+                echo ' ';
+            }
+        ?><br><br>
+        <?php
+            if ($DClos['Closed'] == 0){
+                echo '<label for="Participation"> Écrivez les mots souhaités (2 Maximum) : </label><br>';
+                echo '<input type="Text" name="Participation" id="message" placeholder="Écrivez votre message" >';
+                echo '<input type="Submit" name="BPart" id="BParticipation" value="Send Participation"><br>';
+                echo '<input id="CloseD" type="submit" name="CloseDisc" value="fermer discussion">';
+            }
+        }
+    ?>
 </form>
 </body>
 </html>

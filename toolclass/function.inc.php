@@ -9,7 +9,6 @@ function call_data_base(){
     return $dbLink;
 }
 
-
 function access_bd($dbLink,$query){
     if(!($dbResult=mysqli_query($dbLink, $query))) {
         echo 'Erreur de requête<br/>';
@@ -29,23 +28,5 @@ function verif_connect_user($erreur){
 }
 
 function CloseDisc($IdDiscussion){
-    if (isset($_POST['CloseDisc'])) {
-        $dbLink = call_data_base();
-        $CloQuery = "UPDATE Discussion Set Closed='1' WHERE Id_Discussion='$IdDiscussion'";
-        access_bd($dbLink, $CloQuery);
-        echo '<!DOCTYPE html>
-              <html lang="fr">
-             <head>
-             <title>Discussion fermée</title>
-             </head>
-             <body>
-             <header> La discussion a bien été fermée </header><ul>
-             </ul></body>' . PHP_EOL;
-        $CloQuery  = 'INSERT INTO FullMessage(FullMessage, Id_Discussion)VALUES(';
-        $CloQuery .= '"' . 'Finito!' . '",';
-        $CloQuery .= '"' . $IdDiscussion . '")';
-        access_bd($dbLink, $CloQuery);
-    }
+
 }
-
-

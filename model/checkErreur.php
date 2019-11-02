@@ -46,6 +46,10 @@
             case 'NO_NUMERIC':
                 $messageErreur = 'Vous devez rentrer une valeur une numerique';
                 break;
+            case 'VALIDATION_INSERT_MESSAGE':
+                $messageErreur = 'Votre participation a bien été prise en compte';
+                $messageTitre = 'PARTICIPATION REUSSI';
+                break;
             case 'VALIDATION_MODIF':
                 $messageErreur = 'Modification réussi';
                 $messageTitre = 'Modification réussi';
