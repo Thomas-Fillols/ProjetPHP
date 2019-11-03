@@ -34,7 +34,7 @@
 
         <div id="bloc_discu">
             <p id="old_mess">
-                Dicsussion : <br>
+                Discussion : <br>
                 <?php
                 foreach ($DFMess as $row => $values) {
                     echo nl2br(htmlspecialchars($values['FullMessage']));?><br>
@@ -51,10 +51,10 @@
                 ?>
             </p>
         </div>
-        <form action="../model/Check_message.php?Id_Discussion=<?php echo $IdDiscussion; ?>" method="post"<?php echo $nonConnecte; ?>>
+        <form action="../model/Check_message.php?Id_Discussion=<?php echo $IdDiscussion; ?>" method="post"<?php echo $Connect; ?>>
             <div id="form">
                 <label for="Participation"> Écrivez les mots souhaités ( 2 Maximum ) : </label>
-                <input id="message" type="text" name="Participation" placeholder="Écrivez votre message" required title="Veuillez rentrer 1 ou 2 mots.">
+            <input id="message" type="text" name="Participation" placeholder="Écrivez votre message" required title="Veuillez rentrer 1 ou 2 mots.">
             </div>
 
             <input id="CloseD" type="submit" name="CloseDisc" value="fermer discussion">

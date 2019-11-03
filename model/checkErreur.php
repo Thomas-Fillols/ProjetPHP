@@ -46,9 +46,36 @@
             case 'NO_NUMERIC':
                 $messageErreur = 'Vous devez rentrer une valeur une numerique';
                 break;
+            case 'WORD_MAX':
+                $messageErreur = 'Vous ne pouvez pas rentrer plus de 2 mots dans la partie message';
+                break;
+            case 'WORD_0':
+                $messageErreur = 'Veuillez rentrer au minimum 1 mot';
+                break;
+            case 'WORD_50':
+                $messageErreur = 'Vous ne pouvez pas dépasser 50 Caractères';
+                break;
+            case 'ALWAYS_PARTICIPATION':
+                $messageErreur = 'Vous avez déjà participé à ce message';
+                break;
+            case 'NOT_CREATE_DISCUSSION':
+                $messageErreur = 'Le nom de discussion est déjà existant';
+                break;
+            case 'CONDITION_UTIL':
+                $messageErreur = 'En acceptant de vous inscrire, vous acceptez de suivre nos conditions d\'utilisation';
+                $messageTitre = 'CONDITIONS D\'UTILISATIONS';
+                break;
+            case 'CREATE_DISCUSSION':
+                $messageErreur = 'Vous avez bien créé une nouvelle discussion';
+                $messageTitre = 'CRÉATION D\'UNE NOUVELLE DISCUSSION';
+                break;
+            case 'CLOSE_DISCUSSION':
+                $messageErreur = 'Vous venez de fermer la discussion';
+                $messageTitre = 'DISCUSSION FERMÉ';
+                break;
             case 'VALIDATION_INSERT_MESSAGE':
                 $messageErreur = 'Votre participation a bien été prise en compte';
-                $messageTitre = 'PARTICIPATION REUSSI';
+                $messageTitre = 'PARTICIPATION RÉUSSI';
                 break;
             case 'VALIDATION_MODIF':
                 $messageErreur = 'Modification réussi';

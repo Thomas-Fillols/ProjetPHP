@@ -1,14 +1,17 @@
 <?php
     require '../toolclass/variable.inc.php';
 
+    // Vérifie si le mail à bien été rentré
     if(isset($_POST['email'])) {
         $email = $_POST['email'];
 
         $dbRowReq = $dbLink->query("SELECT email FROM utilisateur WHERE email = '$email'");
         $dbRow = $dbRowReq->fetch();
 
+        // Vérifie si le mail existe
         if ($dbRow['email'] == $email) {
 
+            // Génère un nouveau mot de passe
             $nouveauMdp = rand(100000,999999);
             $nouveauMdpencode = md5($nouveauMdp);
 
@@ -16,6 +19,7 @@
             $dbRowReq->execute();
             $dbRowReq->fetch();
 
+            // Envoie un mail a l'utilisateur
             $message = 'Veuillez rentrez votre nouveau mot de passe : ' . $nouveauMdp . PHP_EOL;
             mail($email,$subject,$message);
 

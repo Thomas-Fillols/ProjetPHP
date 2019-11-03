@@ -5,6 +5,7 @@
     // On détruit les variables de notre session
     session_unset ();
 
+    // Vide la variable $_SESSION
     $_SESSION = array();
 
     if (ini_get("session.use_cookies")) {

@@ -1,10 +1,12 @@
 <?php
 
-require "../toolclass/variable.inc.php";
+require '../toolclass/variable.inc.php';
 
+// Récupération des variables du formulaire
 $CloseD = $_POST['CloseDisc'];
 $NomD = $_POST['NomDiscu'];
 
+// Requête pour recupérer un nom dans la bd Discussion
 $query = "SELECT Distinct NomDiscussion FROM Discussion WHERE NomDiscussion='$NomD'";
 $dbRowReq = $dbLink->prepare($query);
 $dbRowReq->execute();
@@ -12,6 +14,7 @@ $dbRow = $dbRowReq->fetch();
 
 //Si le bouton NameDiscu correspond bien
 if ($_POST['BNameD'] == 'Ouvrir discussion') {
+    // Vérifie que le nom n'existe pas, que le nom ne soit pas vide et qu'il respecte un certain pattern
     if ($dbRow['NomDiscussion'] == NULL && strlen($NomD) != 0 && preg_match("#^[a-zA-Z0-9_]{3,30}$#", $NomD)) {
         //On crée une nouvelle discussion
         $query = 'INSERT INTO Discussion(NomDiscussion) VALUES(';
@@ -19,25 +22,10 @@ if ($_POST['BNameD'] == 'Ouvrir discussion') {
         $dbRowReq = $dbLink->prepare($query);
         $dbRowReq->execute();
         $dbRowReq->fetch();
-        //On affiche cela
-        echo '<!DOCTYPE html> 
-              <html lang="fr">
-              <head>
-              <title>Discussion ouverte</title>
-              </head>
-              <body>
-              <header> La discussion a bien été ouverte </header>
-              <ul>
-              </ul></body>' . PHP_EOL;
+
+        header("Location: ../controller/erreurController.php?erreur=CREATE_DISCUSSION");
+
+    }else{
+        header("Location: ../controller/erreurController.php?erreur=NOT_CREATE_DISCUSSION");
     }
-    else
-        echo '<!DOCTYPE html> 
-              <html lang="fr">
-              <head>
-              <title>Nom invalide</title>
-              </head>
-              <body>
-              <header> Le nom est déjà utilisé </header>
-              <ul>
-              </ul></body>' . PHP_EOL;
 }

@@ -27,10 +27,6 @@ $PartLogin =("SELECT COUNT ID_Message FROM Message WHERE Pseudo='$pseudo' && Id_
 //Récupération du nombre de messages dans une Discussion
 $NbMessageDiscussion = "SELECT COUNT FullMessage FROM FullMessage WHERE Id_Discussion='$IdDiscussion' ";
 
-//Récupération de la dernière valeur de la table discussion
-$LastWord = "SELECT LAST FullMessage FROM Discussion";
-
-
 // Pour afficher ou non les boutons de connexion, inscription, mon profil et deconnexion
 $estConnecte = '';
 $nonConnecte = '';

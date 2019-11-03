@@ -34,7 +34,7 @@
             <div id="form">
                 <input type="Text" name="NomDiscu" id="NameDiscussion" placeholder="Nom de la discussion" pattern="^[a-zA-Z0-9_]{3,30}$" required title="Veuillez rentrer 1 seul mot. Le mot doit faire entre 3 et 30 caractères.">
             </div>
-            <input id="NameDiscu" type="Submit" name="BNameD" value="Ouvrir discussion">
+            <input id="NameDiscu" type="Submit" name="BNameD" value="ouvrir discussion">
         </form>
 
     </section>
