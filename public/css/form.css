@@ -154,7 +154,7 @@ h2 {
 
 
 
-/*  FORM  */
+/*  DISCUSSION / FORM  */
 
 #sec_form {
 	/*position/size*/
@@ -169,7 +169,7 @@ form {
 	margin-right: auto;
 }
 
-#form {
+#form, #bloc_discu {
 	/*position/size*/
 	max-width: 500px;
 	padding: 20px;
@@ -186,6 +186,17 @@ form {
 
 	overflow: hidden;
 	text-overflow: ellipsis;
+}
+
+#bloc_discu {
+	/*position/size*/
+	max-width: 900px;
+	margin-bottom: 20px;
+}
+
+#old_mess {
+	/*position/size*/
+	margin-bottom: 20px;
 }
 
 input::placeholder {

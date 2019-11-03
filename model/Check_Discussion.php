@@ -1,6 +1,5 @@
 <?php
 
-require "../toolclass/function.inc.php";
 require "../toolclass/variable.inc.php";
 
 $CloseD = $_POST['CloseDisc'];
@@ -13,7 +12,7 @@ $dbRow = $dbRowReq->fetch();
 
 //Si le bouton NameDiscu correspond bien
 if ($_POST['BNameD'] == 'Ouvrir discussion') {
-    if ($dbRow['NomDiscussion'] == NULL) {
+    if ($dbRow['NomDiscussion'] == NULL && strlen($NomD) != 0 && preg_match("#^[a-zA-Z0-9_]{3,30}$#", $NomD)) {
         //On crée une nouvelle discussion
         $query = 'INSERT INTO Discussion(NomDiscussion) VALUES(';
         $query .= '"' . $NomD . '")';

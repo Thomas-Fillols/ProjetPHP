@@ -43,8 +43,9 @@
 
     <section id="sec_discussion">
         <h2>discussions</h2>
-        <a id="button_new_discussion" href="../controller/DiscussionController.php">nouvelle discussion</a>
+
         <?php
+        echo $newDiscussion;
         while($donnees = $discussions->fetch()) { ?>
             <div class="bloc_discussion">
                 <a href=../controller/MessageController.php?Id_Discussion=<?php echo $donnees['Id_Discussion']; ?>><?php echo $donnees['NomDiscussion']; ?></a>

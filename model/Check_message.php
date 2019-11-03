@@ -54,8 +54,14 @@ while ($donnee = $req->fetch())
 } // Fin de la boucle des commentaires
 $req->closeCursor();
 
+if (isset($_SESSION['login']) && $DClos['Closed'] == 0) {
+    $estConnecte = 'style="display: none;"';
+}else{
+    $nonConnecte = 'style="display: none;"';
+}
+
 //Envoies de la participation dans le message participatif
-if (isset($_POST['BPart'])) {
+if (isset($_POST['BPart']) && isset($_SESSION['login'])) {
 
     //Erreur si la discussion a déjà été fermée
     if ($LastWord == 'Finito!')
@@ -88,7 +94,8 @@ if (isset($_POST['BPart'])) {
     $ajout.='"'.$Participation.'",';
     $ajout.='"'.$IdDiscussion.'",';
     $ajout.='"'.$pseudo.'")';
-    $query = $dbLink->query($ajout);
+    $query = $dbLink->prepare($ajout);
+    $query->execute();
     $query->fetch();
 
     if ($Participation == 'Yolo.') {
@@ -110,18 +117,19 @@ if (isset($_POST['BPart'])) {
         echo 'La Discussion a été fermée';
     }
 
+    header("Location: ../controller/erreurController.php?erreur=VALIDATION_INSERT_MESSAGE");
 }
 
 if (isset($_POST['CloseDisc'])) {
     $CloseQuery = $dbLink->query("UPDATE Discussion Set Closed='1' WHERE Id_Discussion='$IdDiscussion'");
     $CloseQuery->fetch();
     $CloQueryReq = 'INSERT INTO FullMessage(FullMessage, Id_Discussion)VALUES(';
-    $CloQueryReq .= '"' . 'Finito!' . '",';
+    $CloQueryReq .= '"' . 'La discussion est terminée !' . '",';
     $CloQueryReq .= '"' . $IdDiscussion . '")';
     $CloQuery = $dbLink->query($CloQueryReq);
     $CloQuery->fetch();
+    $query = $dbLink->query("DELETE FROM Message WHERE Id_Discussion='$IdDiscussion'");
+    $query->fetch();
 
     echo 'La discussion a bien été fermée';
 }
-
-//header("Location: ../controller/erreurController.php?erreur=VALIDATION_INSERT_MESSAGE");

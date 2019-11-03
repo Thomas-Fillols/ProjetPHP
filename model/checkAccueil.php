@@ -2,6 +2,7 @@
     session_start();
     if (isset($_SESSION['login'])){
         $estConnecte = 'style="display: none;"';
+        $newDiscussion = "<a id=\"button_new_discussion\" href=\"../controller/DiscussionController.php\">nouvelle discussion</a>";
         $connect = $dbLink->query("SELECT role FROM utilisateur WHERE pseudo='$pseudo'");
         $testRole = $connect->fetch();
         if ($testRole['role'] == 1){

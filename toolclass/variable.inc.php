@@ -18,6 +18,9 @@ $dbLink = new PDO('mysql:host=mysql-freenote.alwaysdata.net;dbname=freenote_sql'
 //Récupération de l'ID de la discussion
 $IdDiscussion = $_GET['Id_Discussion'];
 
+// Récupère le lien vers la page permettant de créer une nouvelle discussion
+$newDiscussion = '';
+
 //Récupération de la participation dans un message en fonction du Login
 $PartLogin =("SELECT COUNT ID_Message FROM Message WHERE Pseudo='$pseudo' && Id_Discussion='$IdDiscussion'");
 
@@ -31,6 +34,9 @@ $LastWord = "SELECT LAST FullMessage FROM Discussion";
 // Pour afficher ou non les boutons de connexion, inscription, mon profil et deconnexion
 $estConnecte = '';
 $nonConnecte = '';
+
+// Pour afficher le formulaire si l'utilisateur est connecté
+$Connect= '';
 
 $mailOK = false;
 
