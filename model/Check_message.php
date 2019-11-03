@@ -77,9 +77,9 @@ if (isset($_POST['BPart']) && isset($_SESSION['login'])) {
         header("Location: ../controller/erreurController.php?erreur=WORD_50");
 
     //Erreur si on a déjà participé au message
-    if ($donnees) {
-        header("Location: ../controller/erreurController.php?erreur=ALWAYS_PARTICIPATION");
-    }
+    //if ($donnees) {
+    //    header("Location: ../controller/erreurController.php?erreur=ALWAYS_PARTICIPATION");
+    //}
 
     //Ajout du message dans le message en cours
     $ajout = 'INSERT INTO Message(Message, Id_Discussion, Pseudo)VALUES(';
@@ -121,6 +121,11 @@ if (isset($_POST['CloseDisc'])) {
     //Précise à la base de données que la discussion est fermé
     $CloseQuery = $dbLink->query("UPDATE Discussion Set Closed='1' WHERE Id_Discussion='$IdDiscussion'");
     $CloseQuery->fetch();
+
+    // Ajoute à la base de données le message
+    $inser = $dbLink->query("INSERT INTO FullMessage(FullMessage, Id_Discussion)VALUES('$fullMessageParticipation', '$IdDiscussion')");
+    $inser->fetch();
+
     //Envoie d'un message pour dire aux utilisateurs que la discussion est fermé
     $CloQueryReq = 'INSERT INTO FullMessage(FullMessage, Id_Discussion)VALUES(';
     $CloQueryReq .= '"' . 'La discussion est terminée !' . '",';

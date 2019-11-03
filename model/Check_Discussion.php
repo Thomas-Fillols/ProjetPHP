@@ -13,7 +13,7 @@ $dbRowReq->execute();
 $dbRow = $dbRowReq->fetch();
 
 //Si le bouton NameDiscu correspond bien
-if ($_POST['BNameD'] == 'Ouvrir discussion') {
+if ($_POST['BNameD'] == 'ouvrir discussion') {
     // Vérifie que le nom n'existe pas, que le nom ne soit pas vide et qu'il respecte un certain pattern
     if ($dbRow['NomDiscussion'] == NULL && strlen($NomD) != 0 && preg_match("#^[a-zA-Z0-9_]{3,30}$#", $NomD)) {
         //On crée une nouvelle discussion

@@ -26,7 +26,7 @@
 
     // Vérifie si le mail à bien été rentré
     // Vérifie le pattern
-    if(preg_match("#^[a-z0-9._-]+@[a-z0-9._-]{2,}\.[a-z]{2,4}$#", $_POST['email'])){
+    if(preg_match("#^[a-zA-Z0-9._-]+@[a-zA-Z0-9._-]{2,}\.[a-z]{2,4}$#", $_POST['email'])){
         if(isset($_POST['email'])){
             $email = $_POST['email'];
         }else{
