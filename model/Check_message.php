@@ -77,9 +77,9 @@ if (isset($_POST['BPart']) && isset($_SESSION['login'])) {
         header("Location: ../controller/erreurController.php?erreur=WORD_50");
 
     //Erreur si on a déjà participé au message
-    //if ($donnees) {
-    //    header("Location: ../controller/erreurController.php?erreur=ALWAYS_PARTICIPATION");
-    //}
+    if ($donnees) {
+        header("Location: ../controller/erreurController.php?erreur=ALWAYS_PARTICIPATION");
+    }
 
     //Ajout du message dans le message en cours
     $ajout = 'INSERT INTO Message(Message, Id_Discussion, Pseudo)VALUES(';
