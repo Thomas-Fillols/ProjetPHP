@@ -33,7 +33,8 @@
         if ($dbRow['email'] == NULL || $mailOK){
             $query="UPDATE utilisateur SET email='$email', role='$newRole' WHERE pseudo='$utilisateur'";
 
-            $dbRowReq = $dbLink->query($query);
+            $dbRowReq = $dbLink->prepare($query);
+            $dbRowReq->execute();
             $dbRowReq->fetch();
 
             header("Location: ../controller/erreurController.php?erreur=VALIDATION_MODIF");

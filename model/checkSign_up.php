@@ -56,16 +56,17 @@
         if ($dbRow['email'] == NULL){
             if($mdp == $mdpverif){
                 if($checkbox == 'ok'){
-                    $query='INSERT INTO utilisateur(pseudo,password,email,role)VALUES(';
+                    $query='INSERT INTO utilisateur(pseudo,password,email,role) VALUES(';
                     $query.='"'.$utilisateur.'",';
                     $query.='"'.md5($mdp).'",';
                     $query.='"'.$email.'",';
                     $query.='"'.$role.'")';
 
                     $dbRowReq = $dbLink->prepare($query);
+                    $dbRowReq->execute();
                     $dbRowReq->fetch();
 
-                    header("Location: ../controller/erreurController.php?erreur=VALIDATION_INSCRIPTION");
+                    //header("Location: ../controller/erreurController.php?erreur=VALIDATION_INSCRIPTION");
                 }else{
                     header('Location: ../controller/erreurController.php?erreur=CONDITION_UTILISATION');
                 }

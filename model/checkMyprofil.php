@@ -10,7 +10,8 @@
             $role = 'Super-administrateur';
             $modifUtilisateur = "<li><label>Action admin : <a href=\"../controller/modifProfilController.php\">Modifier un utilisateur</a></label></li>";
         }else {
-            $dbRowReq = $dbLink->query("UPDATE utilisateur SET role=0 WHERE pseudo = '$pseudo'");
+            $dbRowReq = $dbLink->prepare("UPDATE utilisateur SET role=0 WHERE pseudo = '$pseudo'");
+            $dbRowReq->execute();
             $dbRowReq->fetch();
         }
     }else{

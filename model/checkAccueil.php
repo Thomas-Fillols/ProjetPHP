@@ -21,7 +21,8 @@
                     }else{
                         $nombre = $_POST['nombre'];
                     }
-                    $connect = $dbLink->query("UPDATE Pagination SET pagination='$nombre'");
+                    $connect = $dbLink->prepare("UPDATE Pagination SET pagination='$nombre'");
+                    $connect->execute();
                     $testRole = $connect->fetch();
                 }
             }

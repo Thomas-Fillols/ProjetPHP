@@ -13,7 +13,8 @@
         header('Location: ../controller/erreurController.php?erreur=ERROR_ISSET');
     }
 
-    $dbRowReq = $dbLink->query("SELECT pseudo,password,email FROM utilisateur where pseudo = '$utilisateur' and password = '$mdp'");
+    $dbRowReq = $dbLink->prepare("SELECT pseudo,password,email FROM utilisateur where pseudo = '$utilisateur' and password = '$mdp'");
+    $dbRowReq->execute();
     $dbRow=$dbRowReq->fetch();
 
     if ($dbRow['pseudo'] == $utilisateur && $dbRow['password'] == $mdp) {

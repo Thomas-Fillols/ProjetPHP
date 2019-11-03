@@ -1,9 +1,6 @@
 <?php
 require '../toolclass/variable.inc.php';
 
-//Récupération de l'Id de la discussion
-$IdDisc = $_GET['Id_Discussion'];
-
 //Récupération des variables de POST
 $Participation = $_POST['Participation'];
 $CloseDisc = $_POST['CloseDisc'];
@@ -33,31 +30,32 @@ $MessInPr = $dbLink->prepare('SELECT Message FROM Message WHERE Id_Discussion = 
 $MessInPr->execute(array($IdDiscussion));
 $DMessInPr = $MessInPr->fetchAll();
 
+// Récupère le pseudo pour vérifier si l'utilisateur a déjà écrit un message ou non
+$req = $dbLink->prepare("SELECT Pseudo FROM Message WHERE pseudo='$pseudo' AND Id_Discussion=? ");
+$req->execute(array($_GET['Id_Discussion']));
+$donnees = $req ->fetch();
+
 $clos->closeCursor();
 $dis->closeCursor(); //Libère le curseur pour la prochaine requête
 $FMess->closeCursor();
 $MessInPr->closeCursor();
+$req->closeCursor();
 
 // Récupération des messages
 $req = $dbLink->prepare('SELECT Message FROM Message WHERE Id_Discussion = ? ORDER BY Id_Message');
 $req->execute(array($_GET['Discussion']));
 
-while ($donnees = $req->fetch())
+while ($donnee = $req->fetch())
 {
     ?>
-    <p><strong><?php echo htmlspecialchars($donnees['Pseudo']); ?></strong></p>
-    <p><?php echo nl2br(htmlspecialchars($donnees['Message'])); ?></p>
+    <p><strong><?php echo htmlspecialchars($donnee['Pseudo']); ?></strong></p>
+    <p><?php echo nl2br(htmlspecialchars($donnee['Message'])); ?></p>
     <?php
 } // Fin de la boucle des commentaires
 $req->closeCursor();
 
 //Envoies de la participation dans le message participatif
 if (isset($_POST['BPart'])) {
-
-    //Message participatif: bloquage
-
-    $block = $dbLink->query("SELECT '$pseudo' FROM Message WHERE Id_Discussion='$IdDiscussion'");
-    $block->fetch();
 
     //Erreur si la discussion a déjà été fermée
     if ($LastWord == 'Finito!')
@@ -79,12 +77,16 @@ if (isset($_POST['BPart'])) {
     if ($Submit = !$_POST['BPart'])
         throw (new Exception('Bouton non reconnu'));
 
+    if ($donnees) {
+        throw (new Exception('Vous avez déjà participé dans ce message'));
+    }
+
     //Si on envoi "Yolo." le message se ferme.
 
     //Ajout du message dans le message en cours
     $ajout = 'INSERT INTO Message(Message, Id_Discussion, Pseudo)VALUES(';
     $ajout.='"'.$Participation.'",';
-    $ajout.='"'.$IdDisc.'",';
+    $ajout.='"'.$IdDiscussion.'",';
     $ajout.='"'.$pseudo.'")';
     $query = $dbLink->query($ajout);
     $query->fetch();
@@ -92,34 +94,34 @@ if (isset($_POST['BPart'])) {
     if ($Participation == 'Yolo.') {
 
         //Récupération du message entier
-
+        $FMessCount = $dbLink->query("SELECT count(Message) FROM Message WHERE Id_Discussion='$IdDiscussion'");
+        $FullMessageCount = $FMessCount->fetch();
         $FMess = $dbLink->query("SELECT Message FROM Message WHERE Id_Discussion='$IdDiscussion'");
         $FullMessage = $FMess->fetchAll(PDO::FETCH_COLUMN,'Message');
-        for ($i =0;$i<5;++$i) {
+        for ($i = 0;$i<=$FullMessageCount[0];++$i) {
             $test .= ' ' . $FullMessage[$i];
         }
-        var_dump($test);
-        $fullMessageParticipation = $FullMessage . $Participation;
-        var_dump($fullMessageParticipation);
+        $fullMessageParticipation = $test . $Participation;
         $inser = $dbLink->query("INSERT INTO FullMessage(FullMessage, Id_Discussion)VALUES('$fullMessageParticipation', '$IdDiscussion')");
         $inser->fetch();
-        $query = $dbLink->query("DELETE FROM Message WHERE Id_Discussion='$IdDisc'");
+        $query = $dbLink->query("DELETE FROM Message WHERE Id_Discussion='$IdDiscussion'");
         $query->fetch();
         //Affiche "la réponse a bien été fermée"
         echo 'La Discussion a été fermée';
     }
 
-    //header("Location: ../controller/erreurController.php?erreur=VALIDATION_INSERT_MESSAGE");
 }
 
-    if (isset($_POST['CloseDisc'])) {
-        $CloseQuery = $dbLink->query("UPDATE Discussion Set Closed='1' WHERE Id_Discussion='$IdDiscussion'");
-        $CloseQuery->fetch();
-        $CloQueryReq = 'INSERT INTO FullMessage(FullMessage, Id_Discussion)VALUES(';
-        $CloQueryReq .= '"' . 'Finito!' . '",';
-        $CloQueryReq .= '"' . $IdDiscussion . '")';
-        $CloQuery = $dbLink->query($CloQueryReq);
-        $CloQuery->fetch();
+if (isset($_POST['CloseDisc'])) {
+    $CloseQuery = $dbLink->query("UPDATE Discussion Set Closed='1' WHERE Id_Discussion='$IdDiscussion'");
+    $CloseQuery->fetch();
+    $CloQueryReq = 'INSERT INTO FullMessage(FullMessage, Id_Discussion)VALUES(';
+    $CloQueryReq .= '"' . 'Finito!' . '",';
+    $CloQueryReq .= '"' . $IdDiscussion . '")';
+    $CloQuery = $dbLink->query($CloQueryReq);
+    $CloQuery->fetch();
 
-        echo 'La discussion a bien été fermée';
-    }
+    echo 'La discussion a bien été fermée';
+}
+
+//header("Location: ../controller/erreurController.php?erreur=VALIDATION_INSERT_MESSAGE");

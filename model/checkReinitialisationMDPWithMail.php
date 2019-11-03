@@ -12,7 +12,8 @@
             $nouveauMdp = rand(100000,999999);
             $nouveauMdpencode = md5($nouveauMdp);
 
-            $dbRowReq = $dbLink->query("UPDATE utilisateur SET utilisateur.password ='$nouveauMdpencode' WHERE email = '$email'");
+            $dbRowReq = $dbLink->prepare("UPDATE utilisateur SET utilisateur.password ='$nouveauMdpencode' WHERE email = '$email'");
+            $dbRowReq->execute();
             $dbRowReq->fetch();
 
             $message = 'Veuillez rentrez votre nouveau mot de passe : ' . $nouveauMdp . PHP_EOL;
