@@ -33,7 +33,7 @@
         <form action="../model/checkSign_up.php" method="post">
             <div id="form">
                 <input type="text" name="identifiant" placeholder="Identifiant" pattern="^[a-zA-Z0-9]{3,20}$" required title="Minimum 3 caractères et maximum 20 caractères"/>
-                <input type="text" name="email" placeholder="email@domain.com" pattern="^[a-z0-9._-]+@[a-z0-9._-]{2,}\.[a-z]{2,4}$" required title="Veuillez rentrer un mail valide">
+                <input type="text" name="email" placeholder="email@domain.com" pattern="^[a-zA-Z0-9._-]+@[a-zA-Z0-9._-]{2,}\.[a-z]{2,4}$" required title="Veuillez rentrer un mail valide">
                 <input type="password" name="mdp" placeholder="Mot de passe" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9]).{8,40}$" required title="Votre mot de passe doit faire 8 caractères et doit contenir au moins 1 chiffre et 1 majuscule">
                 <input type="password" name="mdpverif" placeholder="Vérification" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9]).{8,40}$" required title="Votre mot de passe doit faire 8 caractères et doit contenir au moins 1 chiffre et 1 majuscule">
                 <input type="checkbox" name="condition" value="ok" required><a target="_blank" href="../controller/erreurController.php?erreur=CONDITION_UTIL">Conditions</a>
